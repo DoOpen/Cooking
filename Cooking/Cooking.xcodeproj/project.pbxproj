@@ -16,6 +16,7 @@
 		1CB158C91C5F306C0099C2AB /* CookingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB158C81C5F306C0099C2AB /* CookingTests.m */; };
 		1CB158D41C5F306C0099C2AB /* CookingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB158D31C5F306C0099C2AB /* CookingUITests.m */; };
 		1CB1590E1C5F61C00099C2AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1590D1C5F61C00099C2AB /* ViewController.m */; };
+		1CB159111C5F679B0099C2AB /* detaillocation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CB159101C5F679B0099C2AB /* detaillocation.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		1CB158D51C5F306C0099C2AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CB1590C1C5F61C00099C2AB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1CB1590D1C5F61C00099C2AB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1CB159101C5F679B0099C2AB /* detaillocation.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = detaillocation.plist; sourceTree = "<group>"; };
 		25632F0F19097166CC4442E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8A24E5DA8B00C1BAFD03F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CA70C862288D20945D300F8F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				1CB158BC1C5F306C0099C2AB /* LaunchScreen.storyboard */,
 				1CB158BF1C5F306C0099C2AB /* Info.plist */,
 				1CB158AF1C5F306C0099C2AB /* main.m */,
+				1CB159101C5F679B0099C2AB /* detaillocation.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			files = (
 				1CB158BE1C5F306C0099C2AB /* LaunchScreen.storyboard in Resources */,
 				1CB158BB1C5F306C0099C2AB /* Assets.xcassets in Resources */,
+				1CB159111C5F679B0099C2AB /* detaillocation.plist in Resources */,
 				1CB158B91C5F306C0099C2AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
