@@ -51,8 +51,6 @@
     
 }
 
-
-
 #pragma mark -加载子视图
 -(void)addChildControllers:(UIViewController *)Vc Withtitle:(NSString *)title Withimage:(NSString *)image WithSelected:(NSString *)selectImage{
     
@@ -74,7 +72,6 @@
     [self addChildViewController:nav];
     
 }
-
 
 
 - (void)didReceiveMemoryWarning {

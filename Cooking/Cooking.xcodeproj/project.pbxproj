@@ -15,7 +15,6 @@
 		1CB158BE1C5F306C0099C2AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CB158BC1C5F306C0099C2AB /* LaunchScreen.storyboard */; };
 		1CB158C91C5F306C0099C2AB /* CookingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB158C81C5F306C0099C2AB /* CookingTests.m */; };
 		1CB158D41C5F306C0099C2AB /* CookingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB158D31C5F306C0099C2AB /* CookingUITests.m */; };
-		1CB1590E1C5F61C00099C2AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1590D1C5F61C00099C2AB /* ViewController.m */; };
 		1CB159111C5F679B0099C2AB /* detaillocation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CB159101C5F679B0099C2AB /* detaillocation.plist */; };
 		1CB159141C5F6EC20099C2AB /* McookingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159131C5F6EC20099C2AB /* McookingController.m */; };
 		1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159161C5F6EDE0099C2AB /* MarketViewController.m */; };
@@ -56,8 +55,6 @@
 		1CB158CF1C5F306C0099C2AB /* CookingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB158D31C5F306C0099C2AB /* CookingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingUITests.m; sourceTree = "<group>"; };
 		1CB158D51C5F306C0099C2AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CB1590C1C5F61C00099C2AB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1CB1590D1C5F61C00099C2AB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1CB159101C5F679B0099C2AB /* detaillocation.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = detaillocation.plist; sourceTree = "<group>"; };
 		1CB159121C5F6EC20099C2AB /* McookingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = McookingController.h; sourceTree = "<group>"; };
 		1CB159131C5F6EC20099C2AB /* McookingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = McookingController.m; sourceTree = "<group>"; };
@@ -291,8 +288,6 @@
 		1CB1590B1C5F61C00099C2AB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1CB1590C1C5F61C00099C2AB /* ViewController.h */,
-				1CB1590D1C5F61C00099C2AB /* ViewController.m */,
 				1CB159121C5F6EC20099C2AB /* McookingController.h */,
 				1CB159131C5F6EC20099C2AB /* McookingController.m */,
 			);
@@ -513,7 +508,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CB1590E1C5F61C00099C2AB /* ViewController.m in Sources */,
 				1CB159231C5F702B0099C2AB /* BaseViewController.m in Sources */,
 				1CB1591D1C5F6F370099C2AB /* MineViewController.m in Sources */,
 				1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */,
