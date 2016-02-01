@@ -108,15 +108,12 @@
 		1CB158AD1C5F306C0099C2AB /* Cooking */ = {
 			isa = PBXGroup;
 			children = (
-				1CB158B11C5F306C0099C2AB /* AppDelegate.h */,
-				1CB158B21C5F306C0099C2AB /* AppDelegate.m */,
-				1CB158B71C5F306C0099C2AB /* Main.storyboard */,
-				1CB1590F1C5F61F60099C2AB /* Other */,
+				1CB158FD1C5F60DD0099C2AB /* MCooking */,
 				1CB158F51C5F60DD0099C2AB /* Market */,
 				1CB158F91C5F60DD0099C2AB /* MCommunity */,
-				1CB158FD1C5F60DD0099C2AB /* MCooking */,
 				1CB159031C5F60DD0099C2AB /* Mine */,
 				1CB158AE1C5F306C0099C2AB /* Supporting Files */,
+				1CB1590F1C5F61F60099C2AB /* Other */,
 			);
 			path = Cooking;
 			sourceTree = "<group>";
@@ -279,6 +276,9 @@
 		1CB1590F1C5F61F60099C2AB /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				1CB158B11C5F306C0099C2AB /* AppDelegate.h */,
+				1CB158B21C5F306C0099C2AB /* AppDelegate.m */,
+				1CB158B71C5F306C0099C2AB /* Main.storyboard */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -626,6 +626,7 @@
 			baseConfigurationReference = 2A8A24E5DA8B00C1BAFD03F4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Cooking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.DoOpen.Cooking;
@@ -638,6 +639,7 @@
 			baseConfigurationReference = CA70C862288D20945D300F8F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Cooking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.DoOpen.Cooking;

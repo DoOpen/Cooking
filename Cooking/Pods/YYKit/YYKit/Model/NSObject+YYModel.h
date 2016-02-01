@@ -201,6 +201,13 @@
  */
 - (BOOL)modelIsEqual:(id)model;
 
+/**
+ Description method for debugging purposes based on properties.
+ 
+ @return A string that describes the contents of the receiver.
+ */
+- (NSString *)modelDescription;
+
 @end
 
 
@@ -267,8 +274,9 @@
             "n":"Harry Pottery",
             "p": 256,
             "ext" : {
-                "desc" : "A book written by J.K.Rowing."
-            }
+                "desc" : "A book written by J.K.Rowling."
+            },
+            "ID" : 100010
         }
  
     model:
@@ -276,13 +284,15 @@
         @property NSString *name;
         @property NSInteger page;
         @property NSString *desc;
+        @property NSString *bookID;
         @end
- 
+        
         @implementation YYBook
         + (NSDictionary *)modelCustomPropertyMapper {
-            return @{@"name" : @"n",
-                     @"page" : @"p",
-                     @"desc" : @"ext.desc"};
+            return @{@"name"  : @"n",
+                     @"page"  : @"p",
+                     @"desc"  : @"ext.desc",
+                     @"bookID": @[@"id", @"ID", @"book_id"]};
         }
         @end
  
