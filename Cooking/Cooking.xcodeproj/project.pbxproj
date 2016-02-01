@@ -17,6 +17,11 @@
 		1CB158D41C5F306C0099C2AB /* CookingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB158D31C5F306C0099C2AB /* CookingUITests.m */; };
 		1CB1590E1C5F61C00099C2AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1590D1C5F61C00099C2AB /* ViewController.m */; };
 		1CB159111C5F679B0099C2AB /* detaillocation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CB159101C5F679B0099C2AB /* detaillocation.plist */; };
+		1CB159141C5F6EC20099C2AB /* McookingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159131C5F6EC20099C2AB /* McookingController.m */; };
+		1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159161C5F6EDE0099C2AB /* MarketViewController.m */; };
+		1CB1591A1C5F6F110099C2AB /* MComunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159191C5F6F110099C2AB /* MComunityController.m */; };
+		1CB1591D1C5F6F370099C2AB /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1591C1C5F6F370099C2AB /* MineViewController.m */; };
+		1CB159231C5F702B0099C2AB /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159221C5F702B0099C2AB /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,16 @@
 		1CB1590C1C5F61C00099C2AB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1CB1590D1C5F61C00099C2AB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1CB159101C5F679B0099C2AB /* detaillocation.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = detaillocation.plist; sourceTree = "<group>"; };
+		1CB159121C5F6EC20099C2AB /* McookingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = McookingController.h; sourceTree = "<group>"; };
+		1CB159131C5F6EC20099C2AB /* McookingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = McookingController.m; sourceTree = "<group>"; };
+		1CB159151C5F6EDE0099C2AB /* MarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketViewController.h; sourceTree = "<group>"; };
+		1CB159161C5F6EDE0099C2AB /* MarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketViewController.m; sourceTree = "<group>"; };
+		1CB159181C5F6F110099C2AB /* MComunityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MComunityController.h; sourceTree = "<group>"; };
+		1CB159191C5F6F110099C2AB /* MComunityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MComunityController.m; sourceTree = "<group>"; };
+		1CB1591B1C5F6F370099C2AB /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		1CB1591C1C5F6F370099C2AB /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		1CB159211C5F702B0099C2AB /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		1CB159221C5F702B0099C2AB /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		25632F0F19097166CC4442E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8A24E5DA8B00C1BAFD03F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CA70C862288D20945D300F8F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +178,8 @@
 		1CB158F61C5F60DD0099C2AB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1CB159151C5F6EDE0099C2AB /* MarketViewController.h */,
+				1CB159161C5F6EDE0099C2AB /* MarketViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,6 +211,8 @@
 		1CB158FA1C5F60DD0099C2AB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1CB159181C5F6F110099C2AB /* MComunityController.h */,
+				1CB159191C5F6F110099C2AB /* MComunityController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +268,8 @@
 		1CB159041C5F60DD0099C2AB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1CB1591B1C5F6F370099C2AB /* MineViewController.h */,
+				1CB1591C1C5F6F370099C2AB /* MineViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +293,8 @@
 			children = (
 				1CB1590C1C5F61C00099C2AB /* ViewController.h */,
 				1CB1590D1C5F61C00099C2AB /* ViewController.m */,
+				1CB159121C5F6EC20099C2AB /* McookingController.h */,
+				1CB159131C5F6EC20099C2AB /* McookingController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +302,8 @@
 		1CB1590F1C5F61F60099C2AB /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				1CB159211C5F702B0099C2AB /* BaseViewController.h */,
+				1CB159221C5F702B0099C2AB /* BaseViewController.m */,
 				1CB158B11C5F306C0099C2AB /* AppDelegate.h */,
 				1CB158B21C5F306C0099C2AB /* AppDelegate.m */,
 				1CB158B71C5F306C0099C2AB /* Main.storyboard */,
@@ -489,8 +514,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CB1590E1C5F61C00099C2AB /* ViewController.m in Sources */,
+				1CB159231C5F702B0099C2AB /* BaseViewController.m in Sources */,
+				1CB1591D1C5F6F370099C2AB /* MineViewController.m in Sources */,
+				1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */,
 				1CB158B31C5F306C0099C2AB /* AppDelegate.m in Sources */,
+				1CB159141C5F6EC20099C2AB /* McookingController.m in Sources */,
 				1CB158B01C5F306C0099C2AB /* main.m in Sources */,
+				1CB1591A1C5F6F110099C2AB /* MComunityController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
