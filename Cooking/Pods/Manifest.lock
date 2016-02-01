@@ -1,0 +1,54 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Mantle (2.0.6):
+    - Mantle/extobjc (= 2.0.6)
+  - Mantle/extobjc (2.0.6)
+  - Masonry (0.6.3)
+  - MBProgressHUD (0.9.1)
+  - SDCycleScrollView (1.3)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - YYKit (0.9.6):
+    - YYKit/no-arc (= 0.9.6)
+  - YYKit/no-arc (0.9.6)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Mantle
+  - Masonry
+  - MBProgressHUD
+  - SDCycleScrollView
+  - SDWebImage
+  - YYKit
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Mantle: 299966b00759634931699f69cb6a30b9239b944d
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  SDCycleScrollView: 90e43636fcc8e6a7f74e8b64d87418a8e96549b4
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  YYKit: 7e27f6b55883bfe3ec2b98e7ad9c38fcbb92a1c5
+
+COCOAPODS: 0.39.0
