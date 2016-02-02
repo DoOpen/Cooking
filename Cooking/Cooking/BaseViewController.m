@@ -31,22 +31,22 @@
     
     /**下厨房*/
     McookingController *Cook = [[McookingController alloc]init];
-    [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected~iphone" WithSelected:@"tabASelected~iphone"];
+    [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected" WithSelected:@"tabASelected"];
     Cook.view.backgroundColor = [UIColor redColor];
     
     /**市集*/
     MarketViewController *Market = [[MarketViewController alloc]init];
-    [self addChildControllers:Market Withtitle:@"市集" Withimage:@"tabBDeselected~iphone" WithSelected:@"tabBSelected~iphone"];
+    [self addChildControllers:Market Withtitle:@"市集" Withimage:@"tabBDeselected" WithSelected:@"tabBSelected"];
     Market.view.backgroundColor = [UIColor blueColor];
     
     /**社区*/
     MComunityController *Comunity = [[MComunityController alloc] init];
-    [self addChildControllers:Comunity Withtitle:@"社区" Withimage:@"tabCDeselected~iphone" WithSelected:@"tabCSelected~iphone"];
+    [self addChildControllers:Comunity Withtitle:@"社区" Withimage:@"tabCDeselected" WithSelected:@"tabCSelected"];
     Comunity.view.backgroundColor = [UIColor magentaColor];
     
     /**我*/
     MineViewController *Mine = [[MineViewController alloc] init];
-    [self addChildControllers:Mine Withtitle:@"我" Withimage:@"tabDDeselected~iphone" WithSelected:@"tabDSelected~iphone"];
+    [self addChildControllers:Mine Withtitle:@"我" Withimage:@"tabDDeselected" WithSelected:@"tabDSelected"];
     Mine.view.backgroundColor = [UIColor purpleColor];
     
 }
