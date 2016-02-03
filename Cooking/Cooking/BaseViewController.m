@@ -33,7 +33,6 @@
     /** 下厨房 */
     McookingController *Cook = [[McookingController alloc]init];
     [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected" WithSelected:@"tabASelected"];
-    [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected" WithSelected:@"tabASelected"];
     Cook.view.backgroundColor = [UIColor lightGrayColor];
     
    
