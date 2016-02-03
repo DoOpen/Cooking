@@ -17,32 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *leftbarItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"homepageCreateRecipeButton~iphone"] style:UIBarButtonItemStylePlain target:self action:@selector(homePageClick)];
-    [self.navigationItem setLeftBarButtonItem:leftbarItem];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"buylistButtonImage~iphone"] style:UIBarButtonItemStylePlain target:self action: @selector(bulistClick)];
-    [self.navigationItem setRightBarButtonItem:rightBarItem];
-    
-    //搜索框
-//    UISearchBar *search = []
-
-}
-
-#pragma mark -homepage
--(void)homePageClick{
-
-
-    NSLog(@"%s",__FUNCTION__);
-
-}
-
-#pragma mark -bulistClick
--(void)bulistClick{
-    
-    NSLog(@"%s",__FUNCTION__);
-
-
-
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {

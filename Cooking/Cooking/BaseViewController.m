@@ -29,24 +29,27 @@
 #pragma mark -初始化子视图
 -(void)setUpChildControllers{
     
-    /**下厨房*/
+  
+    /** 下厨房 */
     McookingController *Cook = [[McookingController alloc]init];
-    [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected~iphone" WithSelected:@"tabASelected~iphone"];
+    [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected" WithSelected:@"tabASelected"];
+    [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected" WithSelected:@"tabASelected"];
     Cook.view.backgroundColor = [UIColor lightGrayColor];
     
-    /**市集*/
+   
+    /** 市集 */
     MarketViewController *Market = [[MarketViewController alloc]init];
-    [self addChildControllers:Market Withtitle:@"市集" Withimage:@"tabBDeselected~iphone" WithSelected:@"tabBSelected~iphone"];
+    [self addChildControllers:Market Withtitle:@"市集" Withimage:@"tabBDeselected" WithSelected:@"tabBSelected"];
     Market.view.backgroundColor = [UIColor blueColor];
     
-    /**社区*/
+    /** 社区 */
     MComunityController *Comunity = [[MComunityController alloc] init];
-    [self addChildControllers:Comunity Withtitle:@"社区" Withimage:@"tabCDeselected~iphone" WithSelected:@"tabCSelected~iphone"];
+    [self addChildControllers:Comunity Withtitle:@"社区" Withimage:@"tabCDeselected" WithSelected:@"tabCSelected"];
     Comunity.view.backgroundColor = [UIColor magentaColor];
     
-    /**我*/
+    /** 我 */
     MineViewController *Mine = [[MineViewController alloc] init];
-    [self addChildControllers:Mine Withtitle:@"我" Withimage:@"tabDDeselected~iphone" WithSelected:@"tabDSelected~iphone"];
+    [self addChildControllers:Mine Withtitle:@"我" Withimage:@"tabDDeselected" WithSelected:@"tabDSelected"];
     Mine.view.backgroundColor = [UIColor purpleColor];
     
 }
@@ -57,17 +60,21 @@
     Vc.title = title;
     self.view.backgroundColor = [UIColor blueColor];
     
-    //去掉渲染
+    // 去掉渲染
     UIImage *normalImge = [UIImage imageNamed:image];
     normalImge = [normalImge imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
     UIImage *selectedImge = [UIImage imageNamed:selectImage];
     selectedImge = [selectedImge imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    //设置对应控制按钮去的图片
+    // 设置对应控制按钮去的图片
     Vc.tabBarItem.image = normalImge;
     Vc.tabBarItem.selectedImage = selectedImge;
-
-    //创建导航控制器
+    
+    // 设置tabBarItem的标题颜色
+    [Vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor grayColor]} forState:UIControlStateNormal];
+    [Vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor]} forState:UIControlStateSelected];
+    
+    // 创建导航控制器
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:Vc];
     [self addChildViewController:nav];
     
