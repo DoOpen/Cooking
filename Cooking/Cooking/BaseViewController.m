@@ -32,7 +32,7 @@
     /**下厨房*/
     McookingController *Cook = [[McookingController alloc]init];
     [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected~iphone" WithSelected:@"tabASelected~iphone"];
-    Cook.view.backgroundColor = [UIColor redColor];
+    Cook.view.backgroundColor = [UIColor lightGrayColor];
     
     /**市集*/
     MarketViewController *Market = [[MarketViewController alloc]init];
