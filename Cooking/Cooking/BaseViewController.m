@@ -33,7 +33,8 @@
     /** 下厨房 */
     McookingController *Cook = [[McookingController alloc]init];
     [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected" WithSelected:@"tabASelected"];
-    Cook.view.backgroundColor = [UIColor lightGrayColor];
+    Cook.view.backgroundColor = [UIColor colorWithRed:245.0 / 225.0 green:245.0 / 225.0 blue:236.0  / 225.0 alpha:1.0];
+;
     
    
     /** 市集 */
@@ -50,6 +51,9 @@
     MineViewController *Mine = [[MineViewController alloc] init];
     [self addChildControllers:Mine Withtitle:@"我" Withimage:@"tabDDeselected" WithSelected:@"tabDSelected"];
     Mine.view.backgroundColor = [UIColor purpleColor];
+    
+    //设置 tabar 的颜色
+    self.tabBar.barTintColor = [UIColor whiteColor];
     
 }
 
@@ -75,6 +79,9 @@
     
     // 创建导航控制器
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:Vc];
+    
+    // 设置导航栏的颜色背景
+    nav.navigationBar.barTintColor = [UIColor whiteColor];
     [self addChildViewController:nav];
     
 }

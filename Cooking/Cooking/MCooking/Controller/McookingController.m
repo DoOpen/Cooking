@@ -7,8 +7,13 @@
 //
 
 #import "McookingController.h"
+#import <Masonry.h>
 
-@interface McookingController ()
+@interface McookingController ()<UISearchBarDelegate>
+
+@property(nonatomic, strong)UISearchBar *mySearchBar;
+
+@property (nonatomic,strong)UIView *NavView;
 
 @end
 
@@ -25,8 +30,53 @@
 
     //搜索框
     //    UISearchBar *search = []
+    UIView *titleview = [[UIView alloc]initWithFrame:CGRectMake(0,0, 267, 30)];
+    
+    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0,0, 267, 30)];
+    _mySearchBar.layer.cornerRadius = 5;
+    _mySearchBar.layer.borderWidth = 1;
+    _mySearchBar.layer.borderColor = [UIColor whiteColor].CGColor;
+    _mySearchBar.layer.masksToBounds = YES;
+    _mySearchBar.delegate = self;
+//    UIColor *color = [UIColor colorWithRed:239.0 green:239.0 blue:235.0 alpha:1.0];
+//    _mySearchBar.backgroundImage = [self imageWithColor:color size:CGSizeMake(_mySearchBar.frame.size.width, _mySearchBar.frame.size.height)];
+//    [[_mySearchBar.subviews objectAtIndex:0] removeFromSuperview];
+    _mySearchBar.searchBarStyle = UISearchBarStyleMinimal ;
+
+//    _mySearchBar.backgroundColor = color;
+    _mySearchBar.backgroundColor = [UIColor colorWithRed:239.0 / 225.0 green:239.0 / 225.0 blue:239.0 / 225.0 alpha:1.0];
+    _mySearchBar.placeholder = @"搜索";
+    _mySearchBar.delegate = self;
+    [titleview addSubview:_mySearchBar];
+    self.navigationItem.titleView = titleview;
+    
+    
+    
+//    [self.navigationItem setTitleView:_mySearchBar];
+//    [_mySearchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.view.mas_top).offset(25);
+//        make.height.equalTo(@(30));
+//        make.width.equalTo(@(self.view.frame.size.width*0.8));
+//        make.left.equalTo(@(20));
+//    }];
+    
+
 
 }
+
+//取消searchbar背景色
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 #pragma mark -homepage
 -(void)homePageClick{
