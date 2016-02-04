@@ -2,8 +2,8 @@
 //  MineViewController.m
 //  Cooking
 //
-//  Created by 李永方 on 16/2/1.
-//  Copyright © 2016年 李永方. All rights reserved.
+//  Created by YongFangLili on 16/2/1.
+//  Copyright © 2016 DoOpen. All rights reserved.
 //
 
 #import "MineViewController.h"
