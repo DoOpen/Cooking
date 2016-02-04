@@ -21,45 +21,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 初始化 nav
+    [self initNav];
     
+
+
+}
+
+#pragma mark -初始化 nav
+-(void)initNav{
+
     UIBarButtonItem *leftbarItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"homepageCreateRecipeButton"] style:UIBarButtonItemStylePlain target:self action:@selector(homePageClick)];
     [self.navigationItem setLeftBarButtonItem:leftbarItem];
-
+    
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"buylistButtonImage"] style:UIBarButtonItemStylePlain target:self action: @selector(bulistClick)];
     [self.navigationItem setRightBarButtonItem:rightBarItem];
-
-    //搜索框
-    //    UISearchBar *search = []
-    UIView *titleview = [[UIView alloc]initWithFrame:CGRectMake(0,0, 267, 30)];
     
+    //搜索框
+    UIView *titleview = [[UIView alloc]initWithFrame:CGRectMake(0,0, 267, 30)];
     _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0,0, 267, 30)];
     _mySearchBar.layer.cornerRadius = 5;
     _mySearchBar.layer.borderWidth = 1;
     _mySearchBar.layer.borderColor = [UIColor whiteColor].CGColor;
     _mySearchBar.layer.masksToBounds = YES;
     _mySearchBar.delegate = self;
-//    UIColor *color = [UIColor colorWithRed:239.0 green:239.0 blue:235.0 alpha:1.0];
-//    _mySearchBar.backgroundImage = [self imageWithColor:color size:CGSizeMake(_mySearchBar.frame.size.width, _mySearchBar.frame.size.height)];
-//    [[_mySearchBar.subviews objectAtIndex:0] removeFromSuperview];
     _mySearchBar.searchBarStyle = UISearchBarStyleMinimal ;
-
-//    _mySearchBar.backgroundColor = color;
     _mySearchBar.backgroundColor = [UIColor colorWithRed:239.0 / 225.0 green:239.0 / 225.0 blue:239.0 / 225.0 alpha:1.0];
     _mySearchBar.placeholder = @"搜索";
     _mySearchBar.delegate = self;
     [titleview addSubview:_mySearchBar];
     self.navigationItem.titleView = titleview;
-    
-    
-    
-//    [self.navigationItem setTitleView:_mySearchBar];
-//    [_mySearchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.view.mas_top).offset(25);
-//        make.height.equalTo(@(30));
-//        make.width.equalTo(@(self.view.frame.size.width*0.8));
-//        make.left.equalTo(@(20));
-//    }];
-    
 
 
 }
