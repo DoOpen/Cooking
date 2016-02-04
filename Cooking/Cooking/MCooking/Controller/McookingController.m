@@ -47,7 +47,7 @@
     _mySearchBar.delegate = self;
     _mySearchBar.searchBarStyle = UISearchBarStyleMinimal ;
     _mySearchBar.backgroundColor = [UIColor colorWithRed:239.0 / 225.0 green:239.0 / 225.0 blue:239.0 / 225.0 alpha:1.0];
-    _mySearchBar.placeholder = @"搜索";
+    _mySearchBar.placeholder = @"菜谱、食谱";
     _mySearchBar.delegate = self;
     [titleview addSubview:_mySearchBar];
     self.navigationItem.titleView = titleview;
