@@ -8,6 +8,20 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-@interface CKHTTPManager : AFHTTPSessionManager
 
+@interface CKHTTPManager : NSObject
+
++ (nullable CKHTTPManager *)shareManager;
+
+- (void)GET:(nullable NSString *)URLString
+                    parameters:(nullable id)parameters
+                      progress:(nullable void (^)(NSProgress * _Nullable downloadProgress)) downloadProgress
+                       success:(nullable void (^)(NSURLSessionDataTask * _Nullable task, id _Nullable responseObject))success
+                       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error))failure;
+
+- (void)POST:(nullable NSString *)URLString
+                     parameters:(nullable id)parameters
+                       progress:(nullable void (^)(NSProgress * _Nullable uploadProgress)) uploadProgress
+                        success:(nullable void (^)(NSURLSessionDataTask * _Nullable task, id _Nullable responseObject))success
+                        failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error))failure;
 @end
