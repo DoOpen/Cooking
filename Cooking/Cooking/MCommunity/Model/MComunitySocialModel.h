@@ -10,12 +10,12 @@
 
 @interface MComunitySocialLastAuthorsModel : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, strong) NSString *photo60;
-@property (nonatomic, strong) NSString *photo160;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *photo;
-@property (nonatomic, strong) NSString *mail;
-@property (nonatomic, strong) NSString *user_id;
+@property (nonatomic, copy) NSString *photo60;
+@property (nonatomic, copy) NSString *photo160;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *photo;
+@property (nonatomic, copy) NSString *mail;
+@property (nonatomic, copy) NSString *user_id;
 @property (nonatomic, assign) BOOL is_expert;
 
 @end
@@ -25,9 +25,9 @@
 @interface MComunitySocialModel : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, strong) NSArray<MComunitySocialLastAuthorsModel *> *latest_authors;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *desc;
-@property (nonatomic, assign) NSString *contentType;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *desc;
+@property (nonatomic, copy) NSString *contentType;
 
 @end
 
