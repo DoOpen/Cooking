@@ -21,7 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpChildControllers];
+    [self.tabBar setTranslucent:NO];
+    self.tabBar.barTintColor = [UIColor whiteColor];
     
+//    self.tabBar.translucent = NO;
 }
 
 
@@ -40,20 +43,20 @@
     /** 市集 */
     MarketViewController *Market = [[MarketViewController alloc]init];
     [self addChildControllers:Market Withtitle:@"市集" Withimage:@"tabBDeselected" WithSelected:@"tabBSelected"];
-    Market.view.backgroundColor = [UIColor blueColor];
+//    Market.view.backgroundColor = [UIColor blueColor];
+    Market.view.backgroundColor = KMainBackgroudColor;
     
     /** 社区 */
     MComunityController *Comunity = [[MComunityController alloc] init];
     [self addChildControllers:Comunity Withtitle:@"社区" Withimage:@"tabCDeselected" WithSelected:@"tabCSelected"];
-    Comunity.view.backgroundColor = [UIColor magentaColor];
+//    Comunity.view.backgroundColor = [UIColor magentaColor];
+    Comunity.view.backgroundColor = KMainBackgroudColor;
     
     /** 我 */
     MineViewController *Mine = [[MineViewController alloc] init];
     [self addChildControllers:Mine Withtitle:@"我" Withimage:@"tabDDeselected" WithSelected:@"tabDSelected"];
-    Mine.view.backgroundColor = [UIColor purpleColor];
-    
-    //设置 tabar 的颜色
-    self.tabBar.barTintColor = [UIColor whiteColor];
+//    Mine.view.backgroundColor = [UIColor purpleColor];
+    Mine.view.backgroundColor = KMainBackgroudColor;
     
 }
 
@@ -64,10 +67,8 @@
     self.view.backgroundColor = [UIColor blueColor];
     
     // 去掉渲染
-    UIImage *normalImge = [UIImage imageNamed:image];
-    normalImge = [normalImge imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
-    UIImage *selectedImge = [UIImage imageNamed:selectImage];
-    selectedImge = [selectedImge imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *normalImge = KImageOriginalWithName(image);
+    UIImage *selectedImge = KImageOriginalWithName(selectImage);
     
     // 设置对应控制按钮去的图片
     Vc.tabBarItem.image = normalImge;
@@ -82,7 +83,10 @@
     
     // 设置导航栏的颜色背景
     nav.navigationBar.barTintColor = [UIColor whiteColor];
+    // 设置导航为不透明
+    nav.navigationBar.translucent = NO;
     [self addChildViewController:nav];
+    
     
 }
 

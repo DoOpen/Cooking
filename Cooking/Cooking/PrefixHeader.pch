@@ -2,7 +2,7 @@
 //  PrefixHeader.pch
 //  Cooking
 //
-//  Created by 余丽丽 on 16/2/4.
+//  Created by ocarol on 16/2/4.
 //  Copyright © 2016年 DoOpen. All rights reserved.
 //
 
@@ -11,7 +11,75 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "CKHTTPRequest.h"
+#import "LLCommonMethods.h"
 
-#define BASEURL @"http://api.xiachufang.com"
+// 通用设置
+#define BASEURL @"http://api.xiachufang.com/"
+#define KErrorMessage @"网络繁忙请稍后再试"
+#define KMainBackgroudColor  KUIColorWithRGBA1(246.0,246.0,246.0)
+
+// 去掉图片渲染
+#define KImageOriginalWithName(imageName) [[UIImage imageNamed:imageName] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
+
+// 颜色
+#define KUIColorFromRGB(rgbValue)   [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0f green:((float)((rgbValue & 0xFF00) >> 8))/255.0f blue:((float)(rgbValue & 0xFF))/255.0f alpha:1.0f]
+#define KUIColorWithRGBA(r,g,b,a)   [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define KUIColorWithRGBA1(r,g,b)   [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0]
+// 随机色
+#define RandomColor [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1]
+
+
+// 字体
+#define KFont(s) [UIFont systemFontOfSize:s]
+
+
+// 适配
+#define KScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define KScreenHeight [[UIScreen mainScreen] bounds].size.height
+
+#define KSizeScaleX (KScreenHeight > 480 ? KScreenWidth/320 : 1.0)
+#define KSizeScaleY (KScreenHeight > 480 ? KScreenHeight/568 : 1.0)
+
+// 检查系统版本
+// 版本是否 == v
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+// 版本是否 > v
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+// 版本是否 >= v
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+// 版本是否 < v
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+// 版本是否 <= v
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+#define IS_OS_5_OR_LATER                            SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0")
+#define IS_OS_6_OR_LATER                            SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")
+#define IS_OS_7_OR_LATER                            SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
+#define IS_OS_8_OR_LATER                            SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")
+#define IS_OS_9_OR_LATER                            SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0")
+
+// 系统控件默认高度
+#define KNavBarHeight (IS_OS_7_OR_LATER ? 64.0f : 44.0f)
+#define KStatusHeight (IS_OS_7_OR_LATER ? 20 :0.0)
+#define KTabBarHeight 49.0f
+#define kCellDefaultHeight (44.f)
+#define kEnglishKeyboardHeight (216.f)
+#define kChineseKeyboardHeight (252.f)
+
+
+// 判断是否为空
+#define KIsEmptyStr(f) StrValid(f)
+#define KIsEmptyDict(f) (f!=nil && [f isKindOfClass:[NSDictionary class]] && [f count]>0)
+
+
+// 自定义log
+#ifndef NSLog
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+#endif
 
 #endif /* PrefixHeader_pch */
