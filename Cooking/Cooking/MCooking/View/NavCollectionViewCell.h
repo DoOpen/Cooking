@@ -2,7 +2,7 @@
 //  NavCollectionViewCell.h
 //  Cooking
 //
-//  Created by 李永方 on 16/2/15.
+//  Created by YongFangLili on 16/2/15.
 //  Copyright © 2016年 DoOpen. All rights reserved.
 //
 

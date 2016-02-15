@@ -2,7 +2,7 @@
 //  MCookModel.m
 //  Cooking
 //
-//  Created by 李永方 on 16/2/11.
+//  Created by YongFangLili on 16/2/11.
 //  Copyright © 2016年 DoOpen. All rights reserved.
 //
 
