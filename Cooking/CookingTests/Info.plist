@@ -20,5 +20,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>App Transport Security Settings </key>
+	<dict>
+		<key>Allow Arbitrary Loads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

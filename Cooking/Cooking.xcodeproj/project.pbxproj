@@ -23,6 +23,9 @@
 		1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159161C5F6EDE0099C2AB /* MarketViewController.m */; };
 		1CB1591A1C5F6F110099C2AB /* MComunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159191C5F6F110099C2AB /* MComunityController.m */; };
 		1CB1591D1C5F6F370099C2AB /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1591C1C5F6F370099C2AB /* MineViewController.m */; };
+		1CB1592B1C6CBF180099C2AB /* MCookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1592A1C6CBF180099C2AB /* MCookModel.m */; };
+		1CB159321C6DE7D60099C2AB /* MCookHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159311C6DE7D60099C2AB /* MCookHeadView.m */; };
+		1CB1593E1C71C8E60099C2AB /* NavCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1593D1C71C8E60099C2AB /* NavCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,12 @@
 		1CB159191C5F6F110099C2AB /* MComunityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MComunityController.m; sourceTree = "<group>"; };
 		1CB1591B1C5F6F370099C2AB /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		1CB1591C1C5F6F370099C2AB /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		1CB159291C6CBF180099C2AB /* MCookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCookModel.h; sourceTree = "<group>"; };
+		1CB1592A1C6CBF180099C2AB /* MCookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCookModel.m; sourceTree = "<group>"; };
+		1CB159301C6DE7D60099C2AB /* MCookHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCookHeadView.h; sourceTree = "<group>"; };
+		1CB159311C6DE7D60099C2AB /* MCookHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCookHeadView.m; sourceTree = "<group>"; };
+		1CB1593C1C71C8E60099C2AB /* NavCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavCollectionViewCell.h; sourceTree = "<group>"; };
+		1CB1593D1C71C8E60099C2AB /* NavCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavCollectionViewCell.m; sourceTree = "<group>"; };
 		25632F0F19097166CC4442E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8A24E5DA8B00C1BAFD03F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CA70C862288D20945D300F8F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,7 +281,7 @@
 			children = (
 				1CB1590B1C5F61C00099C2AB /* Controller */,
 				1CB159011C5F60DD0099C2AB /* Model */,
-				1CB159021C5F60DD0099C2AB /* View */,
+				1CB1592F1C6DE7B40099C2AB /* View */,
 			);
 			path = MCooking;
 			sourceTree = "<group>";
@@ -280,15 +289,10 @@
 		1CB159011C5F60DD0099C2AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CB159291C6CBF180099C2AB /* MCookModel.h */,
+				1CB1592A1C6CBF180099C2AB /* MCookModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		1CB159021C5F60DD0099C2AB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		1CB159031C5F60DD0099C2AB /* Mine */ = {
@@ -340,6 +344,17 @@
 				1295D7071C633AF900B39FC6 /* PrefixHeader.pch */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		1CB1592F1C6DE7B40099C2AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CB159301C6DE7D60099C2AB /* MCookHeadView.h */,
+				1CB159311C6DE7D60099C2AB /* MCookHeadView.m */,
+				1CB1593C1C71C8E60099C2AB /* NavCollectionViewCell.h */,
+				1CB1593D1C71C8E60099C2AB /* NavCollectionViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5D0D4D9D9F2CC3B2762D2C0E /* Pods */ = {
@@ -544,13 +559,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB1593E1C71C8E60099C2AB /* NavCollectionViewCell.m in Sources */,
 				1CB1591D1C5F6F370099C2AB /* MineViewController.m in Sources */,
+				1CB1592B1C6CBF180099C2AB /* MCookModel.m in Sources */,
 				1295D70F1C633BCA00B39FC6 /* BaseViewController.m in Sources */,
 				1295D70B1C633B9800B39FC6 /* AppDelegate.m in Sources */,
 				1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */,
 				1295D7031C6327B200B39FC6 /* CKHTTPManager.m in Sources */,
 				1CB159141C5F6EC20099C2AB /* McookingController.m in Sources */,
 				1295D7061C6327FA00B39FC6 /* CKHTTPRequest.m in Sources */,
+				1CB159321C6DE7D60099C2AB /* MCookHeadView.m in Sources */,
 				1CB158B01C5F306C0099C2AB /* main.m in Sources */,
 				1CB1591A1C5F6F110099C2AB /* MComunityController.m in Sources */,
 			);

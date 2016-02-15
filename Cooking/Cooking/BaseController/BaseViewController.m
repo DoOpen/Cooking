@@ -82,6 +82,7 @@
     
     // 设置导航栏的颜色背景
     nav.navigationBar.barTintColor = [UIColor whiteColor];
+//    [nav.navigationBar setBarTintColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0]];
     [self addChildViewController:nav];
     
 }
