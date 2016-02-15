@@ -11,6 +11,10 @@
 		1295D7061C6327FA00B39FC6 /* CKHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D7051C6327FA00B39FC6 /* CKHTTPRequest.m */; };
 		1295D70B1C633B9800B39FC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D70A1C633B9800B39FC6 /* AppDelegate.m */; };
 		1295D70F1C633BCA00B39FC6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D70E1C633BCA00B39FC6 /* BaseViewController.m */; };
+		1295D7511C7185AB00B39FC6 /* MComunitySocialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D74F1C7185AB00B39FC6 /* MComunitySocialCell.m */; };
+		1295D7521C7185AB00B39FC6 /* MComunitySocialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1295D7501C7185AB00B39FC6 /* MComunitySocialCell.xib */; };
+		1295D7551C7185D300B39FC6 /* MComunitySocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D7541C7185D300B39FC6 /* MComunitySocialModel.m */; };
+		1295D75D1C71CBA500B39FC6 /* LLCommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */; };
 		17CC6E3680BE7B75CD6C2E9E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25632F0F19097166CC4442E6 /* libPods.a */; };
 		1CB158B01C5F306C0099C2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB158AF1C5F306C0099C2AB /* main.m */; };
 		1CB158B91C5F306C0099C2AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CB158B71C5F306C0099C2AB /* Main.storyboard */; };
@@ -55,6 +59,13 @@
 		1295D70A1C633B9800B39FC6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1295D70D1C633BCA00B39FC6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		1295D70E1C633BCA00B39FC6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		1295D74E1C7185AB00B39FC6 /* MComunitySocialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MComunitySocialCell.h; sourceTree = "<group>"; };
+		1295D74F1C7185AB00B39FC6 /* MComunitySocialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MComunitySocialCell.m; sourceTree = "<group>"; };
+		1295D7501C7185AB00B39FC6 /* MComunitySocialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MComunitySocialCell.xib; sourceTree = "<group>"; };
+		1295D7531C7185D300B39FC6 /* MComunitySocialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MComunitySocialModel.h; sourceTree = "<group>"; };
+		1295D7541C7185D300B39FC6 /* MComunitySocialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MComunitySocialModel.m; sourceTree = "<group>"; };
+		1295D75B1C71CBA400B39FC6 /* LLCommonMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCommonMethods.h; sourceTree = "<group>"; };
+		1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCommonMethods.m; sourceTree = "<group>"; };
 		1CB158AB1C5F306C0099C2AB /* Cooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB158AF1C5F306C0099C2AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1CB158B81C5F306C0099C2AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +151,30 @@
 				1295D70E1C633BCA00B39FC6 /* BaseViewController.m */,
 			);
 			path = BaseController;
+			sourceTree = "<group>";
+		};
+		1295D7231C716EEF00B39FC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1295D7291C716F1700B39FC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1295D74D1C7185AB00B39FC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1295D74E1C7185AB00B39FC6 /* MComunitySocialCell.h */,
+				1295D74F1C7185AB00B39FC6 /* MComunitySocialCell.m */,
+				1295D7501C7185AB00B39FC6 /* MComunitySocialCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1CB158A21C5F306C0099C2AB = {
@@ -248,7 +283,7 @@
 			children = (
 				1CB158FA1C5F60DD0099C2AB /* Controller */,
 				1CB158FB1C5F60DD0099C2AB /* Model */,
-				1CB158FC1C5F60DD0099C2AB /* View */,
+				1295D74D1C7185AB00B39FC6 /* View */,
 			);
 			path = MCommunity;
 			sourceTree = "<group>";
@@ -265,15 +300,10 @@
 		1CB158FB1C5F60DD0099C2AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1295D7531C7185D300B39FC6 /* MComunitySocialModel.h */,
+				1295D7541C7185D300B39FC6 /* MComunitySocialModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		1CB158FC1C5F60DD0099C2AB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		1CB158FD1C5F60DD0099C2AB /* MCooking */ = {
@@ -299,8 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				1CB159041C5F60DD0099C2AB /* Controller */,
-				1CB159071C5F60DD0099C2AB /* Model */,
-				1CB159081C5F60DD0099C2AB /* View */,
+				1295D7291C716F1700B39FC6 /* Model */,
+				1295D7231C716EEF00B39FC6 /* View */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -312,20 +342,6 @@
 				1CB1591C1C5F6F370099C2AB /* MineViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		1CB159071C5F60DD0099C2AB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1CB159081C5F60DD0099C2AB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		1CB1590B1C5F61C00099C2AB /* Controller */ = {
@@ -342,6 +358,8 @@
 			children = (
 				1CB158B71C5F306C0099C2AB /* Main.storyboard */,
 				1295D7071C633AF900B39FC6 /* PrefixHeader.pch */,
+				1295D75B1C71CBA400B39FC6 /* LLCommonMethods.h */,
+				1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -486,6 +504,7 @@
 				1CB158BE1C5F306C0099C2AB /* LaunchScreen.storyboard in Resources */,
 				1CB158BB1C5F306C0099C2AB /* Assets.xcassets in Resources */,
 				1CB159111C5F679B0099C2AB /* detaillocation.plist in Resources */,
+				1295D7521C7185AB00B39FC6 /* MComunitySocialCell.xib in Resources */,
 				1CB158B91C5F306C0099C2AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,6 +581,7 @@
 				1CB1593E1C71C8E60099C2AB /* NavCollectionViewCell.m in Sources */,
 				1CB1591D1C5F6F370099C2AB /* MineViewController.m in Sources */,
 				1CB1592B1C6CBF180099C2AB /* MCookModel.m in Sources */,
+				1295D75D1C71CBA500B39FC6 /* LLCommonMethods.m in Sources */,
 				1295D70F1C633BCA00B39FC6 /* BaseViewController.m in Sources */,
 				1295D70B1C633B9800B39FC6 /* AppDelegate.m in Sources */,
 				1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */,
@@ -570,7 +590,9 @@
 				1295D7061C6327FA00B39FC6 /* CKHTTPRequest.m in Sources */,
 				1CB159321C6DE7D60099C2AB /* MCookHeadView.m in Sources */,
 				1CB158B01C5F306C0099C2AB /* main.m in Sources */,
+				1295D7511C7185AB00B39FC6 /* MComunitySocialCell.m in Sources */,
 				1CB1591A1C5F6F110099C2AB /* MComunityController.m in Sources */,
+				1295D7551C7185D300B39FC6 /* MComunitySocialModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

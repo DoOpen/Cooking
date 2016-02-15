@@ -40,5 +40,7 @@
                            }];
 }
 
-
++ (void)getSocial:(id<CKHTTPRequestDelegate>)delegate params:(NSDictionary *)params {
+    [self GET:delegate URL:cmd_v2_social parameter:nil];
+}
 @end

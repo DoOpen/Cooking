@@ -7,92 +7,140 @@
 //
 
 #import "MComunityController.h"
+#import "MComunitySocialModel.h"
+#import "MComunitySocialCell.h"
 
-@interface MComunityController ()
+@interface MComunityController ()<CKHTTPRequestDelegate>
+
+@property (nonatomic, strong) NSArray *dataArray;
 
 @end
 
 @implementation MComunityController
 
+-(void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    [self refreshData];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithImage:KImageOriginalWithName(@"notification") style:UIBarButtonItemStylePlain target:self action: @selector(jumpToNotificationVc)];
+    [self.navigationItem setRightBarButtonItem:rightBarItem];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerNib:[UINib nibWithNibName:@"MComunitySocialCell" bundle:nil] forCellReuseIdentifier:@"MComunitySocialCellID"];
+    self.tableView.rowHeight = 77;
+    
+    // 刷新器
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    // 设置下拉刷新时执行的动作
+    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    
+    // 意见反馈
+    [self setupFeedback];
+    
+    // 去除多余的分割线
+    [LLCommonMethods setExtraCellLineHidden:self.tableView];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.dataArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    MComunitySocialCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MComunitySocialCellID"];
+    cell.dataModel = self.dataArray[indexPath.row];
+    cell.contentView.backgroundColor = KMainBackgroudColor;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    [self jumpToSocialTheme:self.dataArray[indexPath.row]];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)refreshData {
+    [CKHTTPRequest getSocial:self params:nil];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+-(void)setDataArray:(NSArray *)dataArray {
+    _dataArray = dataArray;
+    
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+// 意见反馈
+- (void)setupFeedback {
+    UIButton *feedbackBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, KScreenHeight - 40 - 10 - KTabBarHeight - KNavBarHeight, KScreenWidth, 40)];
+
+    [feedbackBtn setTitle:@"意见反馈" forState:UIControlStateNormal];
+    [feedbackBtn setTitleColor:KUIColorFromRGB(0x5e5e5e) forState:UIControlStateNormal];
+    feedbackBtn.titleLabel.font = KFont(12);
+    [feedbackBtn addTarget:self action:@selector(jumpToFeedbackVc) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:feedbackBtn];
 }
-*/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Vc Jump
+// 跳转消息页面
+- (void)jumpToNotificationVc {
+   
+   // add coding...
 }
-*/
+
+// 跳转意见反馈
+- (void)jumpToFeedbackVc {
+    
+    // add coding...
+
+}
+
+// 跳转社区主题界面
+- (void)jumpToSocialTheme:(MComunitySocialModel *)selectedModel {
+
+    // add coding...
+
+}
+
+- (void)requestFinished:(id)responseDict cmd:(NSString *)cmd postdict:(NSDictionary *)postdict {
+
+    NSLog(@"responseDict===>%@",responseDict);
+    
+    if ([responseDict[@"status"] isEqualToString:@"ok"]) {
+        
+        NSMutableArray *arrayM = [NSMutableArray array];
+        
+        for (NSDictionary *dict in responseDict[@"content"][@"forums"]) {
+            MComunitySocialModel *model = [MTLJSONAdapter modelOfClass:[MComunitySocialModel class] fromJSONDictionary:dict error:nil];
+            model.contentType = @"forums";
+            [arrayM addObject:model];
+        }
+        
+        MComunitySocialModel *model = [MTLJSONAdapter modelOfClass:[MComunitySocialModel class] fromJSONDictionary:responseDict[@"content"][@"shouts"] error:nil];
+        model.contentType = @"shouts";
+        [arrayM addObject:model];
+        
+        self.dataArray = [arrayM copy];
+    }
+    
+}
+
+- (void)requestFailWithError:(NSError *)error cmd:(NSString *)cmd postdict:(NSDictionary *)postdict {
+
+    NSLog(@"error---->%@",error);
+}
 
 @end
