@@ -21,6 +21,9 @@
 
 @property (nonatomic,strong) NSArray <McookheadEvents *> *events;
 
+@property (nonatomic,assign) NSInteger count;
+
+
 @end
 
 
@@ -52,6 +55,9 @@
 @property (nonatomic,assign) NSInteger ad_type;
 @property (nonatomic,assign) NSString *end_time;
 @property (nonatomic,strong) NSDictionary *ad_info;
+@property (nonatomic,copy) NSString *url;
+@property (nonatomic,assign) NSInteger width;
+@property (nonatomic,assign) NSInteger height;
 
 @end
 

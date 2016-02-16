@@ -22,6 +22,7 @@
         
         //pop_events数组集合
         @"events": @"pop_events.events",
+        @"count" : @"pop_events.count"
        
         };
 
@@ -84,7 +85,11 @@
         @"start_time" : @"start_time",
         @"ad_type" : @"ad_type",
         @"end_time" : @"end_time",
-        @"ad_info" : @"ad_info"
+        @"ad_info" : @"ad_info",
+        @"url" : @"ad_info.url",
+        @"width" : @"ad_info.image.width",
+        @"height" : @"ad_info.image.height"
+        
 
     };
 

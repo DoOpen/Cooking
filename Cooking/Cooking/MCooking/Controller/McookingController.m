@@ -79,7 +79,6 @@ static NSString *navcell = @"navcell";
         if ([cmd isEqualToString:REDBAGURL]) {
             self.redBagDatas = [MTLJSONAdapter modelOfClass:[McookRedBagModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
             
-            
         }
     }
     
@@ -120,13 +119,15 @@ static NSString *navcell = @"navcell";
 #pragma mark -初始化 headview
 -(void)initHeadView{
     
-    MCookHeadView *headView = [[MCookHeadView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 335)];
+    MCookHeadView *headView = [[MCookHeadView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 355)];
     headView.backgroundColor = [UIColor redColor];
     self.tableView.tableHeaderView = headView;
     //
     [headView addSubview:[self setUpPopImage]];
     
     [headView addSubview:self.eventCollectionView];
+    
+    [headView addSubview:self.redbagImgeView];
 
 
 }
@@ -149,6 +150,37 @@ static NSString *navcell = @"navcell";
     return popView;
 
 }
+#pragma mark -redImageview
+-(UIImageView *)redbagImgeView {
+    
+    if (!_redbagImgeView) {
+        
+        _redbagImgeView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navCollectionView.frame), KScreenWidth, 45 * KSizeScaleY)];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(ClickRedBagImage:)];
+        _redbagImgeView.userInteractionEnabled = YES;
+        
+        [_redbagImgeView addGestureRecognizer:tapGesture];
+    }
+    return _redbagImgeView;
+
+}
+// 点击图片进入新用户注册界面
+-(void)ClickRedBagImage:(UITapGestureRecognizer *)sender {
+
+    NSLog(@"%s",__func__);
+    NSLog(@"%@",sender);
+
+}
+-(void)setRedBagDatas:(McookRedBagModel *)redBagDatas {
+
+    _redBagDatas = redBagDatas;
+    
+    [self.redbagImgeView sd_setImageWithURL:[NSURL URLWithString:redBagDatas.ad_info[@"pic_url"]]];
+    [self.redbagImgeView setContentMode: UIViewContentModeScaleAspectFit];
+    
+
+}
+
 
 -(UICollectionView *)eventCollectionView{
     
