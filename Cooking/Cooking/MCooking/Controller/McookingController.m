@@ -13,10 +13,6 @@
 #import "MCookHeadView.h"
 #import "NavCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#define HEADVIEWDATAURL @"/v2/init_page_v5.json?timezone=Asia%2FShanghai&api_sign=68aeeb939943f67b51a886af151b2b2b&api_key=0f9f79be1dac5f003e7de6f876b17c00&origin=iphone&version=5.2.2"
-#define REDBAGURL @"http://api.xiachufang.com/v2/ad/show.json?slot_name=homepage_banner_ad1&height=172.5&origin=iphone&api_sign=f2dfd7fcfcee24a68b589a1f73064b21&width=690&supported_types=1&version=5.2.2&api_key=0f9f79be1dac5f003e7de6f876b17c00"
-
-
 
 @interface McookingController ()<UISearchBarDelegate,CKHTTPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -64,7 +60,8 @@ static NSString *navcell = @"navcell";
     [CKHTTPRequest GET:self URL:HEADVIEWDATAURL parameter:nil];
     
     // 红包请求http://api.xiachufang.com/v2/ad/show.json?slot_name=homepage_banner_ad1&height=172.5&origin=iphone&api_sign=f2dfd7fcfcee24a68b589a1f73064b21&width=690&supported_types=1&version=5.2.2&api_key=0f9f79be1dac5f003e7de6f876b17c00
-    [CKHTTPRequest GET:self URL:REDBAGURL parameter:nil];
+    
+    [CKHTTPRequest getCookingHeadData:self params:nil];
 
 }
 #pragma mark -CKHTTPRequestDelegate
@@ -75,7 +72,6 @@ static NSString *navcell = @"navcell";
         //判断是否是头部请求
         if ([cmd isEqualToString:HEADVIEWDATAURL]) {
             self.headDatas = [MTLJSONAdapter modelOfClass:[MCookModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
-            MCookModel *model = self.headDatas;
             [self initHeadView];
             [self.eventCollectionView reloadData];
         }
@@ -85,11 +81,8 @@ static NSString *navcell = @"navcell";
             
             
         }
-        
-
     }
     
-   //    NSLog(@"%@",mcookM);
 }
 // 请求数据失败
 -(void)requestFailWithError:(NSError *)error cmd:(NSString *)cmd postdict:(NSDictionary *)postdic{

@@ -43,4 +43,13 @@
 + (void)getSocial:(id<CKHTTPRequestDelegate>)delegate params:(NSDictionary *)params {
     [self GET:delegate URL:cmd_v2_social parameter:nil];
 }
+
+/** 首页*/
++ (void)getCookingHeadData:(id<CKHTTPRequestDelegate>)delegate params:(NSDictionary *)params {
+    
+    [self GET:delegate URL:HEADVIEWDATAURL parameter:params];
+    
+    [self GET:delegate URL:REDBAGURL parameter:params];
+
+}
 @end
