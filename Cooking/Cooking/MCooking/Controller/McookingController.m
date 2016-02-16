@@ -40,7 +40,12 @@ static NSString *navcell = @"navcell";
     };
     return nil;
 }
+-(void)viewWillAppear:(BOOL)animated {
+    
+    self.tabBarController.tabBar.hidden = NO;
 
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 初始化 nav
@@ -171,11 +176,20 @@ static NSString *navcell = @"navcell";
     NSLog(@"%s",__func__);
     NSLog(@"%@",sender);
     RecieveRedBagController *redBagVC = [[RecieveRedBagController alloc]init];
-//    redBagVC.view.backgroundColor = [UIColor whiteColor];
+    redBagVC.redBagM = self.redBagDatas;
     
     [self.navigationController pushViewController:redBagVC animated:YES];
+    
 
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+
+    NSLog(@"%@",sender);
+
+}
+
 -(void)setRedBagDatas:(McookRedBagModel *)redBagDatas {
 
     _redBagDatas = redBagDatas;
