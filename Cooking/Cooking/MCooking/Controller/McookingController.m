@@ -13,6 +13,7 @@
 #import "MCookHeadView.h"
 #import "NavCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "RecieveRedBagController.h"
 
 @interface McookingController ()<UISearchBarDelegate,CKHTTPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -164,11 +165,15 @@ static NSString *navcell = @"navcell";
     return _redbagImgeView;
 
 }
-// 点击图片进入新用户注册界面
+#pragma mark - 点击进入新用户领取红包
 -(void)ClickRedBagImage:(UITapGestureRecognizer *)sender {
 
     NSLog(@"%s",__func__);
     NSLog(@"%@",sender);
+    RecieveRedBagController *redBagVC = [[RecieveRedBagController alloc]init];
+//    redBagVC.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.navigationController pushViewController:redBagVC animated:YES];
 
 }
 -(void)setRedBagDatas:(McookRedBagModel *)redBagDatas {

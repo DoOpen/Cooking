@@ -32,6 +32,7 @@
 		1CB1593E1C71C8E60099C2AB /* NavCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1593D1C71C8E60099C2AB /* NavCollectionViewCell.m */; };
 		1CB159421C72C0270099C2AB /* EventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159401C72C0270099C2AB /* EventsCollectionViewCell.m */; };
 		1CB159431C72C0270099C2AB /* EventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CB159411C72C0270099C2AB /* EventsCollectionViewCell.xib */; };
+		1CB159461C7324490099C2AB /* RecieveRedBagController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159451C7324490099C2AB /* RecieveRedBagController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		1CB1593F1C72C0270099C2AB /* EventsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCollectionViewCell.h; sourceTree = "<group>"; };
 		1CB159401C72C0270099C2AB /* EventsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCollectionViewCell.m; sourceTree = "<group>"; };
 		1CB159411C72C0270099C2AB /* EventsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsCollectionViewCell.xib; sourceTree = "<group>"; };
+		1CB159441C7324490099C2AB /* RecieveRedBagController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecieveRedBagController.h; sourceTree = "<group>"; };
+		1CB159451C7324490099C2AB /* RecieveRedBagController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecieveRedBagController.m; sourceTree = "<group>"; };
 		25632F0F19097166CC4442E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8A24E5DA8B00C1BAFD03F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CA70C862288D20945D300F8F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 			children = (
 				1CB159121C5F6EC20099C2AB /* McookingController.h */,
 				1CB159131C5F6EC20099C2AB /* McookingController.m */,
+				1CB159441C7324490099C2AB /* RecieveRedBagController.h */,
+				1CB159451C7324490099C2AB /* RecieveRedBagController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -594,6 +599,7 @@
 				1295D75D1C71CBA500B39FC6 /* LLCommonMethods.m in Sources */,
 				1295D70F1C633BCA00B39FC6 /* BaseViewController.m in Sources */,
 				1295D70B1C633B9800B39FC6 /* AppDelegate.m in Sources */,
+				1CB159461C7324490099C2AB /* RecieveRedBagController.m in Sources */,
 				1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */,
 				1295D7031C6327B200B39FC6 /* CKHTTPManager.m in Sources */,
 				1CB159141C5F6EC20099C2AB /* McookingController.m in Sources */,

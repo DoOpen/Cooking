@@ -36,9 +36,7 @@
     /** 下厨房 */
     McookingController *Cook = [[McookingController alloc]init];
     [self addChildControllers:Cook Withtitle:@"下厨房" Withimage:@"tabADeselected" WithSelected:@"tabASelected"];
-    Cook.view.backgroundColor = [UIColor colorWithRed:245.0 / 225.0 green:245.0 / 225.0 blue:236.0  / 225.0 alpha:1.0];
-;
-    
+        
    
     /** 市集 */
     MarketViewController *Market = [[MarketViewController alloc]init];
@@ -64,7 +62,7 @@
 -(void)addChildControllers:(UIViewController *)Vc Withtitle:(NSString *)title Withimage:(NSString *)image WithSelected:(NSString *)selectImage{
     
     Vc.title = title;
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = KMainBackgroudColor;
     
     // 去掉渲染
     UIImage *normalImge = KImageOriginalWithName(image);
@@ -80,6 +78,8 @@
     
     // 创建导航控制器
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:Vc];
+    // 导航栏字体设置
+    [nav.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor blackColor]}];
     
     // 设置导航栏的颜色背景
     nav.navigationBar.barTintColor = [UIColor whiteColor];

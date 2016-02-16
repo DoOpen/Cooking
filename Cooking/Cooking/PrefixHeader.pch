@@ -18,7 +18,8 @@
 // 通用设置
 #define BASEURL @"http://api.xiachufang.com/"
 #define KErrorMessage @"网络繁忙请稍后再试"
-#define KMainBackgroudColor  KUIColorWithRGBA1(246.0,246.0,246.0)
+#define KMainBackgroudColor  KUIColorWithRGBA1(245.0,245.0,236.0)
+
 
 // 去掉图片渲染
 #define KImageOriginalWithName(imageName) [[UIImage imageNamed:imageName] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
