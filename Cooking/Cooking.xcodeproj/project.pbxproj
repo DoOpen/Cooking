@@ -16,6 +16,7 @@
 		1295D7551C7185D300B39FC6 /* MComunitySocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D7541C7185D300B39FC6 /* MComunitySocialModel.m */; };
 		1295D75D1C71CBA500B39FC6 /* LLCommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */; };
 		17CC6E3680BE7B75CD6C2E9E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25632F0F19097166CC4442E6 /* libPods.a */; };
+		1CA3528F1C7344AC0080A371 /* EventsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3528E1C7344AC0080A371 /* EventsCollectionViewController.m */; };
 		1CB158B01C5F306C0099C2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB158AF1C5F306C0099C2AB /* main.m */; };
 		1CB158B91C5F306C0099C2AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CB158B71C5F306C0099C2AB /* Main.storyboard */; };
 		1CB158BB1C5F306C0099C2AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CB158BA1C5F306C0099C2AB /* Assets.xcassets */; };
@@ -69,6 +70,8 @@
 		1295D7541C7185D300B39FC6 /* MComunitySocialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MComunitySocialModel.m; sourceTree = "<group>"; };
 		1295D75B1C71CBA400B39FC6 /* LLCommonMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCommonMethods.h; sourceTree = "<group>"; };
 		1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCommonMethods.m; sourceTree = "<group>"; };
+		1CA3528D1C7344AC0080A371 /* EventsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCollectionViewController.h; sourceTree = "<group>"; };
+		1CA3528E1C7344AC0080A371 /* EventsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCollectionViewController.m; sourceTree = "<group>"; };
 		1CB158AB1C5F306C0099C2AB /* Cooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB158AF1C5F306C0099C2AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1CB158B81C5F306C0099C2AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 				1CB159131C5F6EC20099C2AB /* McookingController.m */,
 				1CB159441C7324490099C2AB /* RecieveRedBagController.h */,
 				1CB159451C7324490099C2AB /* RecieveRedBagController.m */,
+				1CA3528D1C7344AC0080A371 /* EventsCollectionViewController.h */,
+				1CA3528E1C7344AC0080A371 /* EventsCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				1CB158B01C5F306C0099C2AB /* main.m in Sources */,
 				1295D7511C7185AB00B39FC6 /* MComunitySocialCell.m in Sources */,
 				1CB1591A1C5F6F110099C2AB /* MComunityController.m in Sources */,
+				1CA3528F1C7344AC0080A371 /* EventsCollectionViewController.m in Sources */,
 				1295D7551C7185D300B39FC6 /* MComunitySocialModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

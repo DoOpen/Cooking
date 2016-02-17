@@ -14,6 +14,7 @@
 #import "NavCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "RecieveRedBagController.h"
+#import "EventsCollectionViewController.h"
 
 @interface McookingController ()<UISearchBarDelegate,CKHTTPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -25,12 +26,16 @@
 @property (nonatomic,strong)UIView *popView;
 
 @property (nonatomic, strong)UICollectionView *navCollectionView;
+
+@property (nonatomic, strong)UICollectionView *eventCollectionView;
 // 新手红包
 @property (nonatomic, strong) UIImageView *redbagImgeView;
 
 @end
 
 static NSString *navcell = @"navcell";
+static NSString *eventsCell = @"eventsCell";
+
 
 @implementation McookingController
 
@@ -79,7 +84,7 @@ static NSString *navcell = @"navcell";
         if ([cmd isEqualToString:HEADVIEWDATAURL]) {
             self.headDatas = [MTLJSONAdapter modelOfClass:[MCookModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
             [self initHeadView];
-            [self.eventCollectionView reloadData];
+            [self.navCollectionView reloadData];
         }
         //判断是否是红包请求
         if ([cmd isEqualToString:REDBAGURL]) {
@@ -131,9 +136,11 @@ static NSString *navcell = @"navcell";
     //
     [headView addSubview:[self setUpPopImage]];
     
-    [headView addSubview:self.eventCollectionView];
+    [headView addSubview:self.navCollectionView];
     
     [headView addSubview:self.redbagImgeView];
+    
+    [headView addSubview:self.eventCollectionView];
 
 
 }
@@ -201,8 +208,7 @@ static NSString *navcell = @"navcell";
 }
 
 
--(UICollectionView *)eventCollectionView{
-    
+-(UICollectionView *)navCollectionView {
     if (!_navCollectionView) {
         
         UICollectionViewFlowLayout *flowlayout = [[UICollectionViewFlowLayout alloc]init];
@@ -216,17 +222,36 @@ static NSString *navcell = @"navcell";
         [_navCollectionView registerClass:[NavCollectionViewCell class] forCellWithReuseIdentifier:navcell];
         
     }
-    
-    
     return _navCollectionView;
-    
+}
+
+-(UICollectionView *)eventCollectionView {
+
+    if (!_eventCollectionView) {
+        
+        CGFloat eventViewY = CGRectGetMaxY(self.redbagImgeView.frame);
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+        
+        _eventCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,eventViewY , KScreenWidth, KScreenHeight -eventViewY) collectionViewLayout:flowLayout];
+       EventsCollectionViewController *eventController = [[EventsCollectionViewController alloc]init];
+        eventController.collectionView = _eventCollectionView;
+        [_eventCollectionView registerNib:[UINib nibWithNibName:@"EventsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:eventsCell];
+        _eventCollectionView.delegate = eventController;
+        _eventCollectionView.dataSource = eventController;
+        flowLayout.minimumInteritemSpacing = 0;
+       
+        
+    }
+
+    return _eventCollectionView;
 }
 
 #pragma mark - colletioview delegate
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-
+   
     return 1;
+    
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
@@ -236,7 +261,9 @@ static NSString *navcell = @"navcell";
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+
     NavCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:navcell forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor redColor];
     cell.McookM = self.headDatas.navs[indexPath.item];
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
