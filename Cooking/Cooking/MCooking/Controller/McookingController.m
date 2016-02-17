@@ -17,8 +17,9 @@
 #import "EventsCollectionViewController.h"
 
 @interface McookingController ()<UISearchBarDelegate,CKHTTPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
-
+@property (nonatomic, strong) MCookHeadView *headView;
 @property (nonatomic,strong)MCookModel *headDatas;
+
 @property (nonatomic,strong)McookRedBagModel *redBagDatas;
 
 @property(nonatomic, strong)UISearchBar *mySearchBar;
@@ -27,7 +28,7 @@
 
 @property (nonatomic, strong)UICollectionView *navCollectionView;
 
-@property (nonatomic, strong)UICollectionView *eventCollectionView;
+@property (nonatomic, strong)EventsCollectionViewController *eventViewController;
 // 新手红包
 @property (nonatomic, strong) UIImageView *redbagImgeView;
 
@@ -59,7 +60,6 @@ static NSString *eventsCell = @"eventsCell";
     [self requsData];
     
     [self initHeadView];
-    
 
     
     }
@@ -85,6 +85,7 @@ static NSString *eventsCell = @"eventsCell";
             self.headDatas = [MTLJSONAdapter modelOfClass:[MCookModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
             [self initHeadView];
             [self.navCollectionView reloadData];
+            [self.eventViewController.collectionView reloadData];
         }
         //判断是否是红包请求
         if ([cmd isEqualToString:REDBAGURL]) {
@@ -130,17 +131,17 @@ static NSString *eventsCell = @"eventsCell";
 #pragma mark -初始化 headview
 -(void)initHeadView{
     
-    MCookHeadView *headView = [[MCookHeadView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 355)];
-    headView.backgroundColor = [UIColor redColor];
-    self.tableView.tableHeaderView = headView;
+    self.headView = [[MCookHeadView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 355)];
+    _headView.backgroundColor = [UIColor redColor];
+    self.tableView.tableHeaderView = self.headView;
     //
-    [headView addSubview:[self setUpPopImage]];
+    [self.headView addSubview:[self setUpPopImage]];
     
-    [headView addSubview:self.navCollectionView];
+    [self.headView addSubview:self.navCollectionView];
     
-    [headView addSubview:self.redbagImgeView];
+    [self.headView addSubview:self.redbagImgeView];
     
-    [headView addSubview:self.eventCollectionView];
+    [self.headView addSubview:self.eventViewController.collectionView];
 
 
 }
@@ -196,28 +197,32 @@ static NSString *eventsCell = @"eventsCell";
     NSLog(@"%@",sender);
 
 }
-
+#pragma mark -set 方法红包图片
 -(void)setRedBagDatas:(McookRedBagModel *)redBagDatas {
 
     _redBagDatas = redBagDatas;
     
     [self.redbagImgeView sd_setImageWithURL:[NSURL URLWithString:redBagDatas.ad_info[@"pic_url"]]];
+    
     [self.redbagImgeView setContentMode: UIViewContentModeScaleAspectFit];
     
 
 }
 
-
+#pragma mark -navs
 -(UICollectionView *)navCollectionView {
     if (!_navCollectionView) {
         
         UICollectionViewFlowLayout *flowlayout = [[UICollectionViewFlowLayout alloc]init];
         
         _navCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, (CGRectGetMaxY(self.popView.frame)), [UIScreen mainScreen].bounds.size.width, 93) collectionViewLayout:flowlayout];
+//        flowlayout.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
+        flowlayout.minimumInteritemSpacing = 0;
+//        _navCollectionView.showsHorizontalScrollIndicator = NO;
         _navCollectionView.delegate = self;
         _navCollectionView.dataSource = self;
-        flowlayout.minimumInteritemSpacing = 0;
-//        flowlayout.itemSize = CGSizeMake(90, 90);
+       
+        
         _navCollectionView.backgroundColor = [UIColor whiteColor];
         [_navCollectionView registerClass:[NavCollectionViewCell class] forCellWithReuseIdentifier:navcell];
         
@@ -225,25 +230,34 @@ static NSString *eventsCell = @"eventsCell";
     return _navCollectionView;
 }
 
--(UICollectionView *)eventCollectionView {
+#pragma mark -events 轮播器
+-(EventsCollectionViewController *)eventViewController {
 
-    if (!_eventCollectionView) {
+    if (!_eventViewController) {
         
-        CGFloat eventViewY = CGRectGetMaxY(self.redbagImgeView.frame);
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-        
-        _eventCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,eventViewY , KScreenWidth, KScreenHeight -eventViewY) collectionViewLayout:flowLayout];
-       EventsCollectionViewController *eventController = [[EventsCollectionViewController alloc]init];
-        eventController.collectionView = _eventCollectionView;
-        [_eventCollectionView registerNib:[UINib nibWithNibName:@"EventsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:eventsCell];
-        _eventCollectionView.delegate = eventController;
-        _eventCollectionView.dataSource = eventController;
+        flowLayout.itemSize = CGSizeMake(KScreenWidth, CGRectGetMaxY(self.headView.frame) - CGRectGetMaxY(self.redbagImgeView.frame));
+        flowLayout.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
         flowLayout.minimumInteritemSpacing = 0;
-       
+        flowLayout.minimumLineSpacing = 0;
         
+        _eventViewController = [[EventsCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
+        [_eventViewController.collectionView registerNib:[UINib nibWithNibName:@"EventsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:eventsCell];
+        _eventViewController.collectionView.pagingEnabled = YES;
+                //去掉滚动条
+        _eventViewController.collectionView.showsHorizontalScrollIndicator = NO;
+        
+        
+       
+       
     }
+    CGFloat eventViewY = CGRectGetMaxY(self.redbagImgeView.frame);
+    
+    _eventViewController.collectionView.frame = CGRectMake(0,eventViewY, KScreenWidth, CGRectGetMaxY(self.headView.frame) -eventViewY);
+    
+    _eventViewController.MCookM = self.headDatas;
 
-    return _eventCollectionView;
+    return _eventViewController;
 }
 
 #pragma mark - colletioview delegate
@@ -304,18 +318,9 @@ static NSString *eventsCell = @"eventsCell";
 
     NSLog(@"%s",__FUNCTION__);
     
-    
-    
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
     return 8;
@@ -349,48 +354,6 @@ static NSString *eventsCell = @"eventsCell";
     return 55;
     
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

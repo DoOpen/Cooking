@@ -11,6 +11,7 @@
 
 @interface EventsCollectionViewCell()
 
+
 @property (weak, nonatomic) IBOutlet UIImageView *breakBgimage;
 
 @property (weak, nonatomic) IBOutlet UIImageView *breakTheamImage;
@@ -51,21 +52,24 @@
     _MCookM = MCookM;
     
     McookheadEvents *eventM = MCookM.events[self.CurrentIndex];
-    
+
+    self.breakBgimage.contentMode = UIViewContentModeScaleToFill;
     self.breakBgimage.image = [UIImage imageNamed:self.localImages[self.CurrentIndex]];
-    
     NSURL *url = [NSURL URLWithString:eventM.dishes[1][@"thumbnail_280"]];
     
     [self.breakTheamImage sd_setImageWithURL:url];
+    self.breakBgimage.contentMode = UIViewContentModeScaleAspectFill;
     
     NSString *name = eventM.name;
     name = [name substringToIndex:2];
     self.breakNameLbl.text = name;
+    [self.breakNameLbl sizeToFit];
     
-    NSString *number = [NSString stringWithFormat:@"%ld个作品",(long)eventM.n_dishes];
+    NSString *number = [NSString stringWithFormat:@"%ld作品",(long)eventM.n_dishes];
     self.breakNumLbl.text = number;
     
     self.pageControl.numberOfPages = MCookM.count;
+    
     self.pageControl.currentPage = self.CurrentIndex;
     
 }
