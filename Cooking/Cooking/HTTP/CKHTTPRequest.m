@@ -50,6 +50,8 @@
     [self GET:delegate URL:HEADVIEWDATAURL parameter:params];
     
     [self GET:delegate URL:REDBAGURL parameter:params];
+    
+    [self GET:delegate URL:ISSUEURL parameter:params];
 
 }
 @end

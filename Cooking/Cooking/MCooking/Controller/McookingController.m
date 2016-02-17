@@ -19,6 +19,7 @@
 @interface McookingController ()<UISearchBarDelegate,CKHTTPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) MCookHeadView *headView;
 @property (nonatomic,strong)MCookModel *headDatas;
+@property (nonatomic,strong)McookCellModel *issuesDatas;
 
 @property (nonatomic,strong)McookRedBagModel *redBagDatas;
 
@@ -92,6 +93,12 @@ static NSString *eventsCell = @"eventsCell";
             self.redBagDatas = [MTLJSONAdapter modelOfClass:[McookRedBagModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
             
         }
+    }
+    
+    if ([cmd isEqualToString:ISSUEURL]) {
+        
+        self.issuesDatas = [MTLJSONAdapter modelOfClass:[McookCellModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
+        
     }
     
 }

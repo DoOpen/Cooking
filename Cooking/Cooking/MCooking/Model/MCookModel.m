@@ -90,11 +90,115 @@
         @"width" : @"ad_info.image.width",
         @"height" : @"ad_info.image.height"
         
-
     };
 
 }
 
 @end
+
+/**cell模型*/
+@implementation McookCellModel
+
++ (NSDictionary *) JSONKeyPathsByPropertyKey {
+    
+    return @{
+             @"has_next" : @"cursor.has_next",
+             @"has_prev" : @"cursor.has_prev",
+             @"next" : @"cursor.next",
+             @"count" : @"count",
+             @"issues" : @"issues",
+            };
+}
+
++ (NSValueTransformer *)issuesJSONTransformer {
+    
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[McookissueModel class]];
+    
+}
+
+@end
+
+/*issue*/
+@implementation McookissueModel
+
++ (NSDictionary *) JSONKeyPathsByPropertyKey {
+
+    return @{
+             
+            @"items_count" : @"items_count",
+            @"title" : @"title",
+            @"items" : @"items",
+            @"issue_id" : @"issue_id",
+            @"publish_date" : @"publish_date",
+            @"today_events" : @"today_events"
+    };
+}
++ (NSValueTransformer *)itemsJSONTransformer {
+    
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[McookissueItemsModel class]];
+}
+
+@end
+
+/*items*/
+@implementation McookissueItemsModel
+
+//@property (nonatomic,copy)   NSString *publish_time;
+//@property (nonatomic,copy)   NSString *url;
+//@property (nonatomic,assign) NSInteger templated;
+//@property (nonatomic,assign) NSInteger ID;
+////contents
+//@property (nonatomic,copy)   NSString *title_2nd;
+//@property (nonatomic,copy)   NSString *title_1st;
+//@property (nonatomic,copy)   NSString *title;
+//@property (nonatomic,assign) NSInteger n_cooked;
+//@property (nonatomic,assign) NSInteger n_dishes;
+//@property (nonatomic,copy)   NSString *recipe_id;
+//@property (nonatomic,copy)   NSString *desc;
+//
+////contens -image
+//@property (nonatomic,copy)   NSString *imageurl;
+//@property (nonatomic,copy)   NSString *imagewidth;
+//@property (nonatomic,copy)   NSString *imageheight;
+////contens -author
+//@property (nonatomic,copy)   NSString *authorUrl;
+//@property (nonatomic,copy)   NSString *authorPhoto;
+//@property (nonatomic,copy)   NSString *authorId;
+//@property (nonatomic,copy)   NSString *authorname;
+
++ (NSDictionary *) JSONKeyPathsByPropertyKey {
+    
+    return @{
+             
+             @"publish_time" : @"publish_time",
+             @"url" : @"url",
+             @"templated" : @"template",
+             @"ID" : @"id",
+             @"title_2nd" : @"contents.title_2nd",
+             @"title_1st" : @"contents.title_1st",
+             @"title" : @"contents.title",
+             @"n_cooked" : @"contents.n_cooked",
+             @"n_dishes" : @"contents.n_dishes",
+             @"recipe_id" : @"contents.recipe_id",
+             @"desc" : @"contents.desc",
+             
+             @"imageurl" : @"contents.image.url",
+             @"imagewidth" : @"contents.image.width",
+             @"imageheight" : @"contents.image.height",
+             
+             @"authorUrl" : @"contents.author.url",
+             @"authorPhoto" : @"contents.author.photo",
+             @"authorId" : @"contents.author.id",
+             @"authorname" : @"contents.author.name",
+             
+             
+             };
+}
+
+
+@end
+
+
+
 
 
