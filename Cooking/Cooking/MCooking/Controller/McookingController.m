@@ -15,11 +15,13 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "RecieveRedBagController.h"
 #import "EventsCollectionViewController.h"
+#import "issueTemplate1Cell.h"
 
 @interface McookingController ()<UISearchBarDelegate,CKHTTPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) MCookHeadView *headView;
 @property (nonatomic,strong)MCookModel *headDatas;
 @property (nonatomic,strong)McookCellModel *issuesDatas;
+@property (nonatomic,strong)McookissueModel *issusM;
 
 @property (nonatomic,strong)McookRedBagModel *redBagDatas;
 
@@ -61,6 +63,7 @@ static NSString *eventsCell = @"eventsCell";
     [self requsData];
     
     [self initHeadView];
+    self.tableView.rowHeight = 350;
 
     
     }
@@ -98,6 +101,7 @@ static NSString *eventsCell = @"eventsCell";
     if ([cmd isEqualToString:ISSUEURL]) {
         
         self.issuesDatas = [MTLJSONAdapter modelOfClass:[McookCellModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
+        [self.tableView reloadData];
         
     }
     
@@ -112,6 +116,7 @@ static NSString *eventsCell = @"eventsCell";
 
 #pragma mark -初始化 nav
 -(void)initNav{
+    self.tableView.backgroundColor = KMainBackgroudColor;
 
     UIBarButtonItem *leftbarItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"homepageCreateRecipeButton"] style:UIBarButtonItemStylePlain target:self action:@selector(homePageClick)];
     [self.navigationItem setLeftBarButtonItem:leftbarItem];
@@ -198,12 +203,6 @@ static NSString *eventsCell = @"eventsCell";
 
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
-
-    NSLog(@"%@",sender);
-
-}
 #pragma mark -set 方法红包图片
 -(void)setRedBagDatas:(McookRedBagModel *)redBagDatas {
 
@@ -329,17 +328,30 @@ static NSString *eventsCell = @"eventsCell";
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 8;
+
+    return self.issuesDatas.issues.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 8;
+
+    self.issusM = self.issuesDatas.issues[section];
+    
+    return self.issusM.items.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    McookissueItemsModel *itemsM = self.issusM.items[indexPath.row];
+    
+    
+    if (itemsM.templated == 1) {
+        
+        issueTemplate1Cell *cell = [issueTemplate1Cell issueWithTabelView:tableView];
+        cell.issueItemM = itemsM;
+        return cell;
+        cell.backgroundColor = [UIColor redColor];
+    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell ==nil) {
         
@@ -351,16 +363,24 @@ static NSString *eventsCell = @"eventsCell";
     return cell;
 }
 
+// 设置组标题
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 55 * KSizeScaleY)];
+    McookissueModel *issueM = self.issuesDatas.issues[section];
+    label.text = issueM.title;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:12];
+    label.textColor = [UIColor darkGrayColor];
+    return label;
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-
-//    if (section == 0) {
-//        return 390;
-//    }
     
-    return 55;
+    return 55 * KSizeScaleY;
     
 }
+
 
 
 @end

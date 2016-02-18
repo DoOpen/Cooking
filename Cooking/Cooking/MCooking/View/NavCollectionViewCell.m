@@ -31,7 +31,7 @@
     _navsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navsView.frame), 40, 40)];
     _navsLabel.textAlignment = NSTextAlignmentCenter;
     _navsLabel.textColor = [UIColor darkGrayColor];
-    _navsLabel.font = [UIFont systemFontOfSize:13];
+    _navsLabel.font = [UIFont systemFontOfSize:12];
     CGPoint center = _navsLabel.center;
     center.x = self.contentView.center.x;
     _navsLabel.center = center;

@@ -15,6 +15,7 @@
 #import "LLCommonMethods.h"
 
 
+
 // 通用设置
 #define BASEURL @"http://api.xiachufang.com/"
 #define KErrorMessage @"网络繁忙请稍后再试"
