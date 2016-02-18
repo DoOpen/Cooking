@@ -143,29 +143,6 @@
 /*items*/
 @implementation McookissueItemsModel
 
-//@property (nonatomic,copy)   NSString *publish_time;
-//@property (nonatomic,copy)   NSString *url;
-//@property (nonatomic,assign) NSInteger templated;
-//@property (nonatomic,assign) NSInteger ID;
-////contents
-//@property (nonatomic,copy)   NSString *title_2nd;
-//@property (nonatomic,copy)   NSString *title_1st;
-//@property (nonatomic,copy)   NSString *title;
-//@property (nonatomic,assign) NSInteger n_cooked;
-//@property (nonatomic,assign) NSInteger n_dishes;
-//@property (nonatomic,copy)   NSString *recipe_id;
-//@property (nonatomic,copy)   NSString *desc;
-//
-////contens -image
-//@property (nonatomic,copy)   NSString *imageurl;
-//@property (nonatomic,copy)   NSString *imagewidth;
-//@property (nonatomic,copy)   NSString *imageheight;
-////contens -author
-//@property (nonatomic,copy)   NSString *authorUrl;
-//@property (nonatomic,copy)   NSString *authorPhoto;
-//@property (nonatomic,copy)   NSString *authorId;
-//@property (nonatomic,copy)   NSString *authorname;
-
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
     
     return @{
@@ -181,6 +158,7 @@
              @"n_dishes" : @"contents.n_dishes",
              @"recipe_id" : @"contents.recipe_id",
              @"desc" : @"contents.desc",
+             @"score" : @"contents.score",
              
              @"imageurl" : @"contents.image.url",
              @"imagewidth" : @"contents.image.width",

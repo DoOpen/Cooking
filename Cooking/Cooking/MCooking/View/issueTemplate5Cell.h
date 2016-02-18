@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCookModel.h"
 
 @interface issueTemplate5Cell : UITableViewCell
+
+@property (nonatomic, strong)McookissueItemsModel *issueItemM;
+
++(instancetype)issueWithTabelView:(UITableView *)tabelview;
+
 
 @end

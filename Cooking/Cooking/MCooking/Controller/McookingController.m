@@ -16,6 +16,9 @@
 #import "RecieveRedBagController.h"
 #import "EventsCollectionViewController.h"
 #import "issueTemplate1Cell.h"
+#import "issueTemplate2Cell.h"
+#import "issueTemplate4Cell.h"
+#import "issueTemplate5Cell.h"
 
 @interface McookingController ()<UISearchBarDelegate,CKHTTPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) MCookHeadView *headView;
@@ -64,6 +67,7 @@ static NSString *eventsCell = @"eventsCell";
     
     [self initHeadView];
     self.tableView.rowHeight = 350;
+//    self.tableView.estimatedRowHeight = 400;
 
     
     }
@@ -342,7 +346,9 @@ static NSString *eventsCell = @"eventsCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+     self.issusM = self.issuesDatas.issues[indexPath.section];
     McookissueItemsModel *itemsM = self.issusM.items[indexPath.row];
+    
     
     
     if (itemsM.templated == 1) {
@@ -350,7 +356,27 @@ static NSString *eventsCell = @"eventsCell";
         issueTemplate1Cell *cell = [issueTemplate1Cell issueWithTabelView:tableView];
         cell.issueItemM = itemsM;
         return cell;
-        cell.backgroundColor = [UIColor redColor];
+
+    }
+    if (itemsM.templated == 2) {
+        
+        issueTemplate2Cell *cell = [issueTemplate2Cell issueWithTabelView:tableView];
+        cell.issueItemM = itemsM;
+        return cell;
+    }
+    
+    if (itemsM.templated == 4) {
+        
+        issueTemplate4Cell *cell = [issueTemplate4Cell issueWithTabelView:tableView];
+        cell.issueItemM = itemsM;
+        return cell;
+        
+    }
+    if (itemsM.templated == 5) {
+        issueTemplate5Cell *cell = [issueTemplate5Cell issueWithTabelView:tableView];
+        cell.issueItemM = itemsM;
+        return cell;
+
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell ==nil) {

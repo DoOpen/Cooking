@@ -96,6 +96,7 @@
 @property (nonatomic,assign) NSInteger n_dishes;
 @property (nonatomic,copy)   NSString *recipe_id;
 @property (nonatomic,copy)   NSString *desc;
+@property (nonatomic,copy)   NSString *score;
 
 //contens -image
 @property (nonatomic,copy)   NSString *imageurl;
