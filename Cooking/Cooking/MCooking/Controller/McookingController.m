@@ -128,9 +128,8 @@ static NSString *eventsCell = @"eventsCell";
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"buylistButtonImage"] style:UIBarButtonItemStylePlain target:self action: @selector(bulistClick)];
     [self.navigationItem setRightBarButtonItem:rightBarItem];
     
-    //搜索框
-    UIView *titleview = [[UIView alloc]initWithFrame:CGRectMake(0,0, 267, 30)];
-    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0,0, 267, 30)];
+    _mySearchBar = [[UISearchBar alloc] initWithFrame:self.navigationItem.titleView.bounds];
+    
     _mySearchBar.layer.cornerRadius = 5;
     _mySearchBar.layer.borderWidth = 1;
     _mySearchBar.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -140,8 +139,7 @@ static NSString *eventsCell = @"eventsCell";
     _mySearchBar.backgroundColor = [UIColor colorWithRed:239.0 / 225.0 green:239.0 / 225.0 blue:239.0 / 225.0 alpha:1.0];
     _mySearchBar.placeholder = @"菜谱、食谱";
     _mySearchBar.delegate = self;
-    [titleview addSubview:_mySearchBar];
-    self.navigationItem.titleView = titleview;
+    self.navigationItem.titleView = _mySearchBar;
 }
 
 #pragma mark -初始化 headview
@@ -165,14 +163,16 @@ static NSString *eventsCell = @"eventsCell";
 #pragma mark -流行菜谱
 -(UIView *)setUpPopImage{
     
-    UIView *popView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 130)];
+    CGFloat width =( KScreenWidth - 2) / 2.0;
+    
+    UIView *popView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 130 * KSizeScaleY)];
     self.popView = popView;
-    UIImageView *popImmageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,185, 130)];
+    UIImageView *popImmageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,width, 130 * KSizeScaleY)];
     popImmageView.image = [UIImage imageNamed:@"feedsNotLogin"];
     NSURL *popurl = [NSURL URLWithString:self.headDatas.pop_recipe_picurl];
     [popImmageView sd_setImageWithURL:popurl placeholderImage:[UIImage imageNamed:@"feedsNotLogin"]];
     
-    UIImageView *worksImageView = [[UIImageView alloc]initWithFrame:CGRectMake(popImmageView.frame.size.width + 5,0 , 185, 130)];
+    UIImageView *worksImageView = [[UIImageView alloc]initWithFrame:CGRectMake(popImmageView.frame.size.width + 2,0 , width, 130 * KSizeScaleY)];
     worksImageView.image = [UIImage imageNamed:@"feedsNotLogin"];
     [popView addSubview:popImmageView];
     [popView addSubview: worksImageView];

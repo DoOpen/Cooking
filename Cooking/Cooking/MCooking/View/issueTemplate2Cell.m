@@ -68,6 +68,7 @@ static NSString *ID = @"emplate2Cell";
     [self.contentView addSubview:self.titleImage];
     
     self.title_1Label = [[UILabel alloc] init];
+    self.title_1Label.numberOfLines = 0;
     
     self.title_1Label.textAlignment = NSTextAlignmentCenter;
     self.title_1Label.font = [UIFont fontWithName:@"Helvetica-Bold" size:22];
@@ -79,10 +80,10 @@ static NSString *ID = @"emplate2Cell";
     [self.titleImage addSubview:self.title_1Label];
     
     self.title_2Label = [[UILabel alloc] init];
-    
     self.title_2Label.font = [UIFont systemFontOfSize:15];
     self.title_2Label.textColor = [UIColor whiteColor];
     self.title_2Label.textAlignment = NSTextAlignmentCenter;
+    self.title_2Label.numberOfLines = 0;
     [self.title_2Label sizeToFit];
     [self.titleImage addSubview:self.title_2Label];
     
