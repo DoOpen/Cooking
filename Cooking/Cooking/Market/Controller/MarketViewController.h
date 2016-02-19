@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MarketViewController : UITableViewController
+@interface MarketViewController : UIViewController
 
 @end

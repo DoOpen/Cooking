@@ -19,6 +19,9 @@
 // 首页 cell
 #define ISSUEURL @"http://api.xiachufang.com/v2/issues/list.json?cursor=&origin=iphone&api_sign=8c9575b24b527a0b9011e5c5c4b33c8e&size=2&timezone=Asia%2FShanghai&version=5.2.2&api_key=0f9f79be1dac5f003e7de6f876b17c00"
 
+// 市集 URL
+#define MARKETURL @"http://www.xiachufang.com/page/ec-tab/?version=12"
+
 
 @protocol CKHTTPRequestDelegate <NSObject>
 
@@ -41,6 +44,10 @@
 
 /** 首页 下厨房*/
 + (void)getCookingHeadData:(id<CKHTTPRequestDelegate>)delegate params:(NSDictionary *)params;
+
+/** 市集*/
++ (void)getMarketReuest:(id<CKHTTPRequestDelegate>)delegate params:(NSDictionary *)params;
+
 
  
 

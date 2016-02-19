@@ -113,9 +113,6 @@ static NSString *eventsCell = @"eventsCell";
 // 请求数据失败
 -(void)requestFailWithError:(NSError *)error cmd:(NSString *)cmd postdict:(NSDictionary *)postdic{
 
-
-
-
 }
 
 #pragma mark -初始化 nav
@@ -145,8 +142,9 @@ static NSString *eventsCell = @"eventsCell";
 #pragma mark -初始化 headview
 -(void)initHeadView{
     
-    self.headView = [[MCookHeadView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 355)];
+    self.headView = [[MCookHeadView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 355 * KSizeScaleY)];
     _headView.backgroundColor = [UIColor redColor];
+    
     self.tableView.tableHeaderView = self.headView;
     //
     [self.headView addSubview:[self setUpPopImage]];
@@ -172,7 +170,7 @@ static NSString *eventsCell = @"eventsCell";
     NSURL *popurl = [NSURL URLWithString:self.headDatas.pop_recipe_picurl];
     [popImmageView sd_setImageWithURL:popurl placeholderImage:[UIImage imageNamed:@"feedsNotLogin"]];
     
-    UIImageView *worksImageView = [[UIImageView alloc]initWithFrame:CGRectMake(popImmageView.frame.size.width + 2,0 , width, 130 * KSizeScaleY)];
+    UIImageView *worksImageView = [[UIImageView alloc]initWithFrame:CGRectMake(popImmageView.frame.size.width + 2,0 , width, 130 *KSizeScaleY)];
     worksImageView.image = [UIImage imageNamed:@"feedsNotLogin"];
     [popView addSubview:popImmageView];
     [popView addSubview: worksImageView];
@@ -185,7 +183,7 @@ static NSString *eventsCell = @"eventsCell";
     
     if (!_redbagImgeView) {
         
-        _redbagImgeView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navCollectionView.frame), KScreenWidth, 45 * KSizeScaleY)];
+        _redbagImgeView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navCollectionView.frame), KScreenWidth, 50 * KSizeScaleY)];
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(ClickRedBagImage:)];
         _redbagImgeView.userInteractionEnabled = YES;
         
@@ -225,7 +223,7 @@ static NSString *eventsCell = @"eventsCell";
         
         UICollectionViewFlowLayout *flowlayout = [[UICollectionViewFlowLayout alloc]init];
         
-        _navCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, (CGRectGetMaxY(self.popView.frame)), [UIScreen mainScreen].bounds.size.width, 93) collectionViewLayout:flowlayout];
+        _navCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, (CGRectGetMaxY(self.popView.frame)), [UIScreen mainScreen].bounds.size.width, 95*KSizeScaleY) collectionViewLayout:flowlayout];
 //        flowlayout.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
         flowlayout.minimumInteritemSpacing = 0;
 //        _navCollectionView.showsHorizontalScrollIndicator = NO;
@@ -256,11 +254,9 @@ static NSString *eventsCell = @"eventsCell";
         _eventViewController.collectionView.pagingEnabled = YES;
                 //去掉滚动条
         _eventViewController.collectionView.showsHorizontalScrollIndicator = NO;
-        
-        
-       
        
     }
+    
     CGFloat eventViewY = CGRectGetMaxY(self.redbagImgeView.frame);
     
     _eventViewController.collectionView.frame = CGRectMake(0,eventViewY, KScreenWidth, CGRectGetMaxY(self.headView.frame) -eventViewY);
@@ -298,7 +294,7 @@ static NSString *eventsCell = @"eventsCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat itemW = [UIScreen mainScreen].bounds.size.width /(CGFloat)self.headDatas.navs.count;
-    return CGSizeMake(itemW, 93);
+    return CGSizeMake(itemW, 93*KSizeScaleY);
 }
 
 //取消searchbar背景色
@@ -407,6 +403,12 @@ static NSString *eventsCell = @"eventsCell";
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+
+
+
+
+}
 
 @end

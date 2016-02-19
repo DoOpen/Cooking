@@ -51,10 +51,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <pageControl opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zcc-UR-u1s">
-                        <rect key="frame" x="163" y="47" width="49" height="37"/>
+                        <rect key="frame" x="163" y="64" width="49" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="49" id="cMf-F9-Mh3"/>
-                            <constraint firstAttribute="height" constant="37" id="loP-C6-aoO"/>
+                            <constraint firstAttribute="height" constant="10" id="loP-C6-aoO"/>
                         </constraints>
                         <color key="pageIndicatorTintColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="currentPageIndicatorTintColor" red="1" green="0.18672025689999999" blue="0.32794083699999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,7 +69,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="CP3-d0-nCt" firstAttribute="top" secondItem="7he-jZ-Cxh" secondAttribute="top" constant="20" id="24Z-Io-rEe"/>
+                <constraint firstItem="CP3-d0-nCt" firstAttribute="top" secondItem="7he-jZ-Cxh" secondAttribute="bottom" constant="10" id="24Z-Io-rEe"/>
                 <constraint firstItem="X0A-oE-Vdb" firstAttribute="centerY" secondItem="7he-jZ-Cxh" secondAttribute="centerY" id="8t7-PS-Pan"/>
                 <constraint firstAttribute="trailing" secondItem="0Kz-8J-nvo" secondAttribute="trailing" constant="10" id="AdE-CZ-NZS"/>
                 <constraint firstItem="xNF-V2-bxt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ipf-K0-PKB"/>
@@ -79,7 +79,7 @@
                 <constraint firstItem="0Kz-8J-nvo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="UpX-Fd-yPp"/>
                 <constraint firstItem="GF0-Wj-fGa" firstAttribute="centerY" secondItem="7he-jZ-Cxh" secondAttribute="centerY" id="ZAh-cV-RxM"/>
                 <constraint firstAttribute="bottom" secondItem="xNF-V2-bxt" secondAttribute="bottom" id="cOA-Ao-JTk"/>
-                <constraint firstAttribute="bottom" secondItem="zcc-UR-u1s" secondAttribute="bottom" id="fFX-Xw-Qjf"/>
+                <constraint firstAttribute="bottom" secondItem="zcc-UR-u1s" secondAttribute="bottom" constant="10" id="fFX-Xw-Qjf"/>
                 <constraint firstItem="7he-jZ-Cxh" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="hA6-Wx-MXs"/>
                 <constraint firstItem="7he-jZ-Cxh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="18" id="iop-V3-hw9"/>
                 <constraint firstItem="CP3-d0-nCt" firstAttribute="centerX" secondItem="7he-jZ-Cxh" secondAttribute="centerX" id="nDy-bz-p6Q"/>

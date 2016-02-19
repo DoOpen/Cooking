@@ -24,11 +24,11 @@
 -(void)setUpUI {
     
     //创建 cell 里的子控件
-    CGFloat MarginX = (CGRectGetWidth(self.frame) - 50) / 2.0;
-    _navsView = [[UIImageView alloc]initWithFrame:CGRectMake(MarginX, 10, 50, 50)];
+    CGFloat MarginX = (CGRectGetWidth(self.frame) - 50*KSizeScaleY) / 2.0;
+    _navsView = [[UIImageView alloc]initWithFrame:CGRectMake(MarginX, 10 *KSizeScaleY, 50*KSizeScaleX, 50*KSizeScaleY)];
     //    _navsView.backgroundColor = [UIColor blueColor];
     
-    _navsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navsView.frame), 40, 40)];
+    _navsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_navsView.frame), 40 * KSizeScaleX, 40 *KSizeScaleY)];
     _navsLabel.textAlignment = NSTextAlignmentCenter;
     _navsLabel.textColor = [UIColor darkGrayColor];
     _navsLabel.font = [UIFont systemFontOfSize:12];

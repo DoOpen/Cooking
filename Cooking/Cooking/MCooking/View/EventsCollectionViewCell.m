@@ -24,7 +24,6 @@
 
 @property (strong, nonatomic) NSArray *localImages;
 
-
 @end
 
 
@@ -33,19 +32,6 @@
 - (void)awakeFromNib {
     // Initialization code
 }
-//-(instancetype)initWithFrame:(CGRect)frame {
-//    
-//    self = [super initWithFrame:frame];
-//    if (self) {
-//        
-//        //加载 xib
-//        self
-//    }
-//
-//
-//
-//
-//}
 
 -(void)setMCookM:(MCookModel *)MCookM {
     
@@ -58,7 +44,7 @@
     NSURL *url = [NSURL URLWithString:eventM.dishes[1][@"thumbnail_280"]];
     
     [self.breakTheamImage sd_setImageWithURL:url];
-    self.breakBgimage.contentMode = UIViewContentModeScaleAspectFill;
+    self.breakBgimage.contentMode = UIViewContentModeScaleAspectFit;
     
     NSString *name = eventM.name;
     name = [name substringToIndex:2];

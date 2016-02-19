@@ -54,4 +54,13 @@
     [self GET:delegate URL:ISSUEURL parameter:params];
 
 }
+
+/** 市集*/
++ (void)getMarketReuest:(id<CKHTTPRequestDelegate>)delegate params:(NSDictionary *)params {
+
+    [self GET:delegate URL:MARKETURL parameter:nil];
+
+}
+
+
 @end
