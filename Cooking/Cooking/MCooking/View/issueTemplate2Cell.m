@@ -131,6 +131,7 @@ static NSString *ID = @"emplate2Cell";
     }];
     
     [self.SerperatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleImage.mas_bottom).with.offset(0);
         make.left.equalTo(self.contentView.mas_left).with.offset(0);
         make.right.equalTo(self.contentView.mas_right).with.offset(0);
         make.bottom.equalTo(self.contentView.mas_bottom).with.offset(0);

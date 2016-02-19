@@ -92,6 +92,7 @@ static NSString *ID = @"emplate4Cell";
         make.width.equalTo(self.contentView.mas_width);
         
         make.height.equalTo(@(imageY));
+        make.bottom.equalTo(self.contentView.mas_bottom);
     }];
     
 }

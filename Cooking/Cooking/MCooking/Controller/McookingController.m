@@ -66,8 +66,8 @@ static NSString *eventsCell = @"eventsCell";
     [self requsData];
     
     [self initHeadView];
-    self.tableView.rowHeight = 350;
-//    self.tableView.estimatedRowHeight = 400;
+//    self.tableView.rowHeight = 360;
+    self.tableView.estimatedRowHeight = 350;
 
     
     }

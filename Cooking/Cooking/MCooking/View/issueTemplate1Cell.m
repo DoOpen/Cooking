@@ -94,9 +94,9 @@ static NSString *ID = @"emplate1Cell";
     
      [self.titleImage sd_setImageWithURL:[NSURL URLWithString:issueM.imageurl]];
      self.titleLabel.text = issueM.title;
-//     [self.titleLabel sizeToFit];
+     [self.titleLabel sizeToFit];
      self.descLabel.text = issueM.desc;
-//     [self.descLabel sizeToFit];
+     [self.descLabel sizeToFit];
     
     CGFloat scale =[issueM.imageheight doubleValue] / [issueM.imagewidth doubleValue];
     
@@ -125,12 +125,13 @@ static NSString *ID = @"emplate1Cell";
         make.top.equalTo(self.titleLabel.mas_bottom).with.offset(10);
         make.left.equalTo(self.contentView.mas_left).with.offset(20);
         make.right.equalTo(self.contentView.mas_right).with.offset(-20);
-        make.bottom.equalTo(self.SerperatorView.mas_top).with.offset(-30);
+        make.bottom.equalTo(self.SerperatorView.mas_top).with.offset(-20);
         
 
     }];
     
     [self.SerperatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.descLabel).with.offset(30);
         make.left.equalTo(self.contentView.mas_left).with.offset(0);
         make.right.equalTo(self.contentView.mas_right).with.offset(0);
         make.bottom.equalTo(self.contentView.mas_bottom).with.offset(0);

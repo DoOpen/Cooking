@@ -125,9 +125,9 @@ static NSString *ID = @"emplate5Cell";
     [self.titleImage sd_setImageWithURL:[NSURL URLWithString:issueM.imageurl]];
     
     self.titleLabel.text = issueM.title;
-    //     [self.titleLabel sizeToFit];
+         [self.titleLabel sizeToFit];
     self.descLabel.text = issueM.desc;
-    //     [self.descLabel sizeToFit];
+         [self.descLabel sizeToFit];
     if ([issueM.score isEqualToString:@""]) {
         self.nsdishesLabel.text = [NSString stringWithFormat:@"%ld人做过",issueM.n_dishes];
         
@@ -135,14 +135,12 @@ static NSString *ID = @"emplate5Cell";
             
         NSString *score = [issueM.score substringToIndex:3];
             
-        self.nsdishesLabel.text = [NSString stringWithFormat:@"%@分 · %ld做过",score,issueM.n_dishes];
+        self.nsdishesLabel.text = [NSString stringWithFormat:@"%@分 · %ld人做过",score,issueM.n_dishes];
     }
     
     //author
     [self.authorImageView sd_setImageWithURL:[NSURL URLWithString:issueM.authorPhoto]];
     self.authorName.text = issueM.authorname;
-    
-    
     
     CGFloat scale =[issueM.imageheight doubleValue] / [issueM.imagewidth doubleValue];
     
@@ -176,13 +174,14 @@ static NSString *ID = @"emplate5Cell";
     }];
     
     [self.nsdishesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.descLabel.mas_bottom).with.offset(15);
+        make.top.equalTo(self.descLabel.mas_bottom).with.offset(10);
         make.left.equalTo(self.contentView.mas_left).with.offset(20);
         make.right.equalTo(self.contentView.mas_right).with.offset(-20);
         
     }];
     
     [self.SerperatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.nsdishesLabel.mas_bottom).with.offset(20);
         make.left.equalTo(self.contentView.mas_left).with.offset(0);
         make.right.equalTo(self.contentView.mas_right).with.offset(0);
         make.bottom.equalTo(self.contentView.mas_bottom).with.offset(0);
