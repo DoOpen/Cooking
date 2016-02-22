@@ -354,7 +354,7 @@ static NSString *eventsCell = @"eventsCell";
         return cell;
 
     }
-    if (itemsM.templated == 2) {
+    if (itemsM.templated == 2 || itemsM.templated == 6) {
         
         issueTemplate2Cell *cell = [issueTemplate2Cell issueWithTabelView:tableView];
         cell.issueItemM = itemsM;
@@ -374,13 +374,14 @@ static NSString *eventsCell = @"eventsCell";
         return cell;
 
     }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell ==nil) {
         
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    cell.backgroundColor = [UIColor blueColor];
+    cell.backgroundColor = [UIColor cyanColor];
     
     return cell;
 }

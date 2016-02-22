@@ -17,7 +17,7 @@
 // 首页红包
 #define REDBAGURL @"http://api.xiachufang.com/v2/ad/show.json?slot_name=homepage_banner_ad1&height=172.5&origin=iphone&api_sign=f2dfd7fcfcee24a68b589a1f73064b21&width=690&supported_types=1&version=5.2.2&api_key=0f9f79be1dac5f003e7de6f876b17c00"
 // 首页 cell
-#define ISSUEURL @"http://api.xiachufang.com/v2/issues/list.json?cursor=&origin=iphone&api_sign=8c9575b24b527a0b9011e5c5c4b33c8e&size=2&timezone=Asia%2FShanghai&version=5.2.2&api_key=0f9f79be1dac5f003e7de6f876b17c00"
+#define ISSUEURL @"http://api.xiachufang.com/v2/issues/list.json?cursor=&origin=iphone&api_sign=554adc185b559ebf74f227679e15afb1&sk=z00zJGwoQSS53CR6h04P2w&size=2&timezone=Asia%2FShanghai&version=5.2.3&api_key=0f9f79be1dac5f003e7de6f876b17c00"
 
 // 市集 URL
 #define MARKETURL @"http://www.xiachufang.com/page/ec-tab/?version=12"
