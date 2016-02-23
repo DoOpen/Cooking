@@ -107,5 +107,22 @@
 @property (nonatomic,copy)   NSString *authorPhoto;
 @property (nonatomic,copy)   NSString *authorId;
 @property (nonatomic,copy)   NSString *authorname;
+@end
+
+/**pop 模型*/
+@interface McookPopModel : MTLModel<MTLJSONSerializing>
+
+@property (nonatomic,assign) NSInteger count;
+@property (nonatomic,strong) NSArray *recipe_id;
 
 @end
+
+///**作者详情*/
+//@interface McookPopModel : MTLModel<MTLJSONSerializing>
+//
+//@property (nonatomic,assign) NSInteger count;
+//@property (nonatomic,strong) NSArray *recipe_id;
+//
+//@end
+
+

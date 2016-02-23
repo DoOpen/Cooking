@@ -76,7 +76,7 @@ static NSString *eventsCell = @"eventsCell";
     
    //头部数据请求
     //  @"http://api.xiachufang.com/v2/init_page_v5.json?timezone=Asia%2FShanghai&api_sign=68aeeb939943f67b51a886af151b2b2b&api_key=0f9f79be1dac5f003e7de6f876b17c00&origin=iphone&version=5.2.2";
-    [CKHTTPRequest GET:self URL:HEADVIEWDATAURL parameter:nil];
+//    [CKHTTPRequest GET:self URL:HEADVIEWDATAURL parameter:nil];
     
     // 红包请求http://api.xiachufang.com/v2/ad/show.json?slot_name=homepage_banner_ad1&height=172.5&origin=iphone&api_sign=f2dfd7fcfcee24a68b589a1f73064b21&width=690&supported_types=1&version=5.2.2&api_key=0f9f79be1dac5f003e7de6f876b17c00
     
@@ -100,13 +100,14 @@ static NSString *eventsCell = @"eventsCell";
             self.redBagDatas = [MTLJSONAdapter modelOfClass:[McookRedBagModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
             
         }
-    }
+    
     
     if ([cmd isEqualToString:ISSUEURL]) {
         
         self.issuesDatas = [MTLJSONAdapter modelOfClass:[McookCellModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
         [self.tableView reloadData];
         
+        }
     }
     
 }
@@ -166,7 +167,12 @@ static NSString *eventsCell = @"eventsCell";
     UIView *popView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 130 * KSizeScaleY)];
     self.popView = popView;
     UIImageView *popImmageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,width, 130 * KSizeScaleY)];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ClickPopViewImage:)];
     popImmageView.image = [UIImage imageNamed:@"feedsNotLogin"];
+    popImmageView.userInteractionEnabled = YES;
+    
+    
+    [popImmageView addGestureRecognizer:tapGesture];
     NSURL *popurl = [NSURL URLWithString:self.headDatas.pop_recipe_picurl];
     [popImmageView sd_setImageWithURL:popurl placeholderImage:[UIImage imageNamed:@"feedsNotLogin"]];
     
@@ -192,6 +198,7 @@ static NSString *eventsCell = @"eventsCell";
     return _redbagImgeView;
 
 }
+
 #pragma mark - 点击进入新用户领取红包
 -(void)ClickRedBagImage:(UITapGestureRecognizer *)sender {
 
@@ -201,6 +208,14 @@ static NSString *eventsCell = @"eventsCell";
     redBagVC.redBagM = self.redBagDatas;
     
     [self.navigationController pushViewController:redBagVC animated:YES];
+    
+
+}
+
+#pragma mark - 点击进入进入本周流行菜谱
+-(void)ClickPopViewImage:(UITapGestureRecognizer *)sender {
+
+    
     
 
 }

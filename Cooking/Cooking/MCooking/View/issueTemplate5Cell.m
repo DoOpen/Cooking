@@ -102,6 +102,9 @@ static NSString *ID = @"emplate5Cell";
     self.authorImageView = [[UIImageView alloc] init];
     self.authorImageView.layer.cornerRadius = 25;
     self.authorImageView.layer.masksToBounds = YES;
+    UITapGestureRecognizer *Tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Clickauthorimage:)];
+    self.authorImageView.userInteractionEnabled = YES;
+    [self.authorImageView addGestureRecognizer:Tap];
     [self.contentView addSubview:self.authorImageView];
     
     self.authorName = [[UILabel alloc] init];
@@ -206,6 +209,13 @@ static NSString *ID = @"emplate5Cell";
         
         
     }];
+}
+
+-(void)Clickauthorimage:(UITapGestureRecognizer *)sender {
+
+
+    NSLog(@"你点击了我");
+
 }
 
 

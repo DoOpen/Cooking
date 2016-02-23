@@ -173,10 +173,26 @@
              };
 }
 
-
 @end
 
 
+/**pop 模型*/
+@implementation McookPopModel
+
++ (NSDictionary *) JSONKeyPathsByPropertyKey {
+    return @{
+
+        @"count" : @"count",
+        @"recipe_id" : @"recipe_id"
+    };
+    
+}
+
+
+
+
+
+@end
 
 
 
