@@ -125,7 +125,7 @@ static NSString *ID = @"emplate2Cell";
     }];
     
     [self.title_2Label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.title_1Label.mas_bottom).with.offset(20);
+        make.top.equalTo(self.title_1Label.mas_bottom).with.offset(10);
         make.centerX.equalTo(self.titleImage.mas_centerX);
         
         

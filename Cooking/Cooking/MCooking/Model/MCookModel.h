@@ -92,8 +92,9 @@
 @property (nonatomic,copy)   NSString *title_2nd;
 @property (nonatomic,copy)   NSString *title_1st;
 @property (nonatomic,copy)   NSString *title;
-@property (nonatomic,assign) NSInteger n_cooked;
-@property (nonatomic,assign) NSInteger n_dishes;
+@property (nonatomic,assign) id n_cooked;
+@property (nonatomic,assign) id n_dishes;
+
 @property (nonatomic,copy)   NSString *recipe_id;
 @property (nonatomic,copy)   NSString *desc;
 @property (nonatomic,copy)   NSString *score;
@@ -109,13 +110,13 @@
 @property (nonatomic,copy)   NSString *authorname;
 @end
 
-/**pop 模型*/
-@interface McookPopModel : MTLModel<MTLJSONSerializing>
-
-@property (nonatomic,assign) NSInteger count;
-@property (nonatomic,strong) NSArray *recipe_id;
-
-@end
+///**pop 模型*/
+//@interface McookPopModel : MTLModel<MTLJSONSerializing>
+//
+//@property (nonatomic,assign) NSInteger count;
+//@property (nonatomic,strong) NSArray *recipe_id;
+//
+//@end
 
 ///**作者详情*/
 //@interface McookPopModel : MTLModel<MTLJSONSerializing>

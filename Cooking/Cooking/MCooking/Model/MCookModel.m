@@ -122,7 +122,7 @@
 @implementation McookissueModel
 
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
-
+   
     return @{
              
             @"items_count" : @"items_count",
@@ -145,6 +145,7 @@
 
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
     
+    
     return @{
              
              @"publish_time" : @"publish_time",
@@ -156,6 +157,8 @@
              @"title" : @"contents.title",
              @"n_cooked" : @"contents.n_cooked",
              @"n_dishes" : @"contents.n_dishes",
+         
+             
              @"recipe_id" : @"contents.recipe_id",
              @"desc" : @"contents.desc",
              @"score" : @"contents.score",
@@ -176,23 +179,20 @@
 @end
 
 
-/**pop 模型*/
-@implementation McookPopModel
-
-+ (NSDictionary *) JSONKeyPathsByPropertyKey {
-    return @{
-
-        @"count" : @"count",
-        @"recipe_id" : @"recipe_id"
-    };
-    
-}
-
-
-
-
-
-@end
-
-
+///**pop 模型*/
+//@implementation McookPopModel
+//
+//+ (NSDictionary *) JSONKeyPathsByPropertyKey {
+//    return @{
+//
+//        @"count" : @"count",
+//        @"recipe_id" : @"recipe_id"
+//    };
+//    
+//}
+//
+//
+//@end
+//
+//
 

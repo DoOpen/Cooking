@@ -131,14 +131,28 @@ static NSString *ID = @"emplate5Cell";
          [self.titleLabel sizeToFit];
     self.descLabel.text = issueM.desc;
          [self.descLabel sizeToFit];
+    NSString *n_dishes ;
+    if ([issueM.n_dishes isKindOfClass:[NSString class]]) {
+        
+        n_dishes = issueM.n_dishes;
+        
+    }else {
+    
+        n_dishes = [NSString stringWithFormat:@"%@",issueM.n_dishes];
+    
+    
+    }
+    
     if ([issueM.score isEqualToString:@""]) {
-        self.nsdishesLabel.text = [NSString stringWithFormat:@"%ld人做过",issueM.n_dishes];
+//        self.nsdishesLabel.text = [NSString stringWithFormat:@"%ld人做过",issueM.n_dishes];
+        self.nsdishesLabel.text = [NSString stringWithFormat:@"%@人做过",n_dishes];
         
         }else {
             
         NSString *score = [issueM.score substringToIndex:3];
             
-        self.nsdishesLabel.text = [NSString stringWithFormat:@"%@分 · %ld人做过",score,issueM.n_dishes];
+//        self.nsdishesLabel.text = [NSString stringWithFormat:@"%@分 · %ld人做过",score,issueM.n_dishes];
+         self.nsdishesLabel.text = [NSString stringWithFormat:@"%@分 · %@人做过",score,n_dishes];
     }
     
     //author
