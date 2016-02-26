@@ -94,7 +94,6 @@
 @property (nonatomic,copy)   NSString *title;
 @property (nonatomic,assign) id n_cooked;
 @property (nonatomic,assign) id n_dishes;
-
 @property (nonatomic,copy)   NSString *recipe_id;
 @property (nonatomic,copy)   NSString *desc;
 @property (nonatomic,copy)   NSString *score;

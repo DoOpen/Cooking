@@ -19,6 +19,7 @@
 // 首页 cell
 
 #define ISSUEURL @"http://api.xiachufang.com/v2/issues/list.json?cursor=&origin=iphone&api_sign=554adc185b559ebf74f227679e15afb1&sk=z00zJGwoQSS53CR6h04P2w&size=2&timezone=Asia%2FShanghai&version=5.2.3&api_key=0f9f79be1dac5f003e7de6f876b17c00"
+#define FILE_ISSUEURL @"file_issueurl.json"
 
 // 市集 URL
 #define MARKETURL @"http://www.xiachufang.com/page/ec-tab/?version=12"
