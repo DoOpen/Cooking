@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121C98721C80431D007DAB81 /* file_issueurl.json in Resources */ = {isa = PBXBuildFile; fileRef = 121C98711C80431C007DAB81 /* file_issueurl.json */; };
 		1295D7031C6327B200B39FC6 /* CKHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D7021C6327B200B39FC6 /* CKHTTPManager.m */; };
 		1295D7061C6327FA00B39FC6 /* CKHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D7051C6327FA00B39FC6 /* CKHTTPRequest.m */; };
 		1295D70B1C633B9800B39FC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D70A1C633B9800B39FC6 /* AppDelegate.m */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121C98711C80431C007DAB81 /* file_issueurl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file_issueurl.json; sourceTree = "<group>"; };
 		1295D7011C6327B200B39FC6 /* CKHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKHTTPManager.h; sourceTree = "<group>"; };
 		1295D7021C6327B200B39FC6 /* CKHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKHTTPManager.m; sourceTree = "<group>"; };
 		1295D7041C6327FA00B39FC6 /* CKHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKHTTPRequest.h; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121C98701C8042C9007DAB81 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				121C98711C80431C007DAB81 /* file_issueurl.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		1295D7001C6304BF00B39FC6 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +292,7 @@
 		1CB158AE1C5F306C0099C2AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				121C98701C8042C9007DAB81 /* Resource */,
 				1CB158BA1C5F306C0099C2AB /* Assets.xcassets */,
 				1CB158BC1C5F306C0099C2AB /* LaunchScreen.storyboard */,
 				1CB158BF1C5F306C0099C2AB /* Info.plist */,
@@ -529,7 +540,7 @@
 				TargetAttributes = {
 					1CB158AA1C5F306C0099C2AB = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 9J4Y7YNRRQ;
+						DevelopmentTeam = LCU6SPZP3B;
 					};
 					1CB158C31C5F306C0099C2AB = {
 						CreatedOnToolsVersion = 7.2;
@@ -573,6 +584,7 @@
 				1CB158BB1C5F306C0099C2AB /* Assets.xcassets in Resources */,
 				1CB159111C5F679B0099C2AB /* detaillocation.plist in Resources */,
 				1295D7521C7185AB00B39FC6 /* MComunitySocialCell.xib in Resources */,
+				121C98721C80431D007DAB81 /* file_issueurl.json in Resources */,
 				1CB158B91C5F306C0099C2AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,12 +822,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Cooking/PrefixHeader.pch";
 				INFOPLIST_FILE = Cooking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.DoOpen.Cookin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -826,12 +840,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Cooking/PrefixHeader.pch";
 				INFOPLIST_FILE = Cooking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.DoOpen.Cookin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

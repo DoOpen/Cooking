@@ -102,12 +102,12 @@ static NSString *eventsCell = @"eventsCell";
         }
     
     
-        if ([cmd isEqualToString:ISSUEURL]) {
-            
-            self.issuesDatas = [MTLJSONAdapter modelOfClass:[McookCellModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
-            [self.tableView reloadData];
-            
-            }
+    if ([cmd isEqualToString:ISSUEURL] || [cmd isEqualToString:FILE_ISSUEURL]) {
+        
+        self.issuesDatas = [MTLJSONAdapter modelOfClass:[McookCellModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
+        [self.tableView reloadData];
+        
+        }
     }
     
 }

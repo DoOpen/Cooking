@@ -92,8 +92,12 @@
 @property (nonatomic,copy)   NSString *title_2nd;
 @property (nonatomic,copy)   NSString *title_1st;
 @property (nonatomic,copy)   NSString *title;
+
 @property (nonatomic,assign) NSNumber * n_cooked;
 @property (nonatomic,assign) NSNumber * n_dishes;
+
+//@property (nonatomic,assign) id n_cooked;
+//@property (nonatomic,assign) id n_dishes;
 
 @property (nonatomic,copy)   NSString *recipe_id;
 @property (nonatomic,copy)   NSString *desc;

@@ -85,5 +85,7 @@
 #endif
 #endif
 
+#define KFILEPATH(fileName) [[NSBundle mainBundle] pathForResource:fileName ofType:@""]
+#define KStrNOTNULL(f) (f!=nil && [f isKindOfClass:[NSString class]] && ![f isEqualToString:@""])
 
 #endif /* PrefixHeader_pch */
