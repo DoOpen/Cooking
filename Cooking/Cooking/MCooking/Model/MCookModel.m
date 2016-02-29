@@ -176,6 +176,48 @@
              };
 }
 
++ (NSValueTransformer *)n_dishesJSONTransformer {
+    
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        
+        NSString *dished = value;
+        NSNumber *disheM = @(dished.integerValue);
+        return disheM;
+    }];
+    
+//    return [MTLValueTransformertransformerUsingForwardBlock:^id(id value,BOOL *success, NSError *__autoreleasing *error) {
+//        
+//        NSNumber *num = value;
+//        
+//        NSString *tempStr = [NSStringstringWithFormat:@"%@", num];
+//        
+//        return tempStr;
+//        
+//    } reverseBlock:^id(id value,BOOL *success, NSError *__autoreleasing *error) {
+//        
+//        NSString *tempStr = value;
+//        
+//        NSNumber *tempNum = @(tempStr.integerValue);
+//        
+//        return tempNum;
+//        
+//    }];
+}
+
++ (NSValueTransformer *)n_cookedJSONTransformer {
+    
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        
+        NSString *n_cooked = value;
+        NSNumber *n_cookedM = @(n_cooked.integerValue);
+        
+        
+        return n_cookedM;
+    }];
+    
+   }
+
+
 @end
 
 
