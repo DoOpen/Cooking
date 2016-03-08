@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "MCookModel.h"
+//@class EventsCollectionViewController;
+//@protocol EventsCollectionViewControllerDelegate <NSObject>
+//
+//-(void)didSelectedEvents:(EventsCollectionViewController *)eventVc;
+//
+//@end
 
 @interface EventsCollectionViewController : UICollectionViewController
 
 @property (nonatomic, strong) MCookModel * MCookM;
+
+@property (nonatomic, copy) void(^eventBlock)();
+
+///**代理*/
+//@property (nonatomic,weak)id<EventsCollectionViewControllerDelegate>delegate;
 
 @end

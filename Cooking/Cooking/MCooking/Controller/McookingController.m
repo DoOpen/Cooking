@@ -19,6 +19,8 @@
 #import "issueTemplate2Cell.h"
 #import "issueTemplate4Cell.h"
 #import "issueTemplate5Cell.h"
+#import "NavsViewController.h"
+#import "eventsDetailViewController.h"
 
 @interface McookingController ()<UISearchBarDelegate,CKHTTPRequestDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) MCookHeadView *headView;
@@ -53,6 +55,7 @@ static NSString *eventsCell = @"eventsCell";
     return nil;
 }
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     self.tabBarController.tabBar.hidden = NO;
 
@@ -68,6 +71,7 @@ static NSString *eventsCell = @"eventsCell";
     [self initHeadView];
 //    self.tableView.rowHeight = 360;
     self.tableView.estimatedRowHeight = 350;
+
 
     
     }
@@ -119,6 +123,7 @@ static NSString *eventsCell = @"eventsCell";
 #pragma mark -初始化 nav
 -(void)initNav{
     self.tableView.backgroundColor = KMainBackgroudColor;
+    
 
     UIBarButtonItem *leftbarItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"homepageCreateRecipeButton"] style:UIBarButtonItemStylePlain target:self action:@selector(homePageClick)];
     [self.navigationItem setLeftBarButtonItem:leftbarItem];
@@ -215,7 +220,7 @@ static NSString *eventsCell = @"eventsCell";
 #pragma mark - 点击进入进入本周流行菜谱
 -(void)ClickPopViewImage:(UITapGestureRecognizer *)sender {
 
-    
+    //
     
 
 }
@@ -269,7 +274,20 @@ static NSString *eventsCell = @"eventsCell";
         _eventViewController.collectionView.pagingEnabled = YES;
                 //去掉滚动条
         _eventViewController.collectionView.showsHorizontalScrollIndicator = NO;
-       
+        
+        //设置 block
+        __weak typeof(self) weakSelf =self ;
+        _eventViewController.eventBlock = ^{
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+                eventsDetailViewController *eventDetailvc = [[eventsDetailViewController alloc] initWithCollectionViewLayout:layout];
+            layout.minimumInteritemSpacing = 5 * KSizeScaleX;
+            layout.minimumLineSpacing = 5 * KSizeScaleY;
+            layout.itemSize = CGSizeMake((KScreenWidth - 5 * KSizeScaleX)/2, 320 * KSizeScaleY);
+            layout.headerReferenceSize = CGSizeMake(KScreenWidth, 116 * KSizeScaleY);
+            [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+//                eventDetailvc.view.backgroundColor = [UIColor redColor];
+                [weakSelf.navigationController pushViewController:eventDetailvc animated:YES];
+        };
     }
     
     CGFloat eventViewY = CGRectGetMaxY(self.redbagImgeView.frame);
@@ -302,6 +320,15 @@ static NSString *eventsCell = @"eventsCell";
     cell.McookM = self.headDatas.navs[indexPath.item];
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    MCookHeadViewNavs *nav = self.headDatas.navs[indexPath.item];
+    //进入到其他的界面
+    NavsViewController *navC = [[NavsViewController alloc] init];
+    navC.navM = nav;
+    navC.title = nav.name;
+    [self.navigationController pushViewController:navC animated:YES];
 }
 
 #pragma mark --UICollectionViewDelegateFlowLayout

@@ -17,6 +17,9 @@
 		1295D7551C7185D300B39FC6 /* MComunitySocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D7541C7185D300B39FC6 /* MComunitySocialModel.m */; };
 		1295D75D1C71CBA500B39FC6 /* LLCommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */; };
 		17CC6E3680BE7B75CD6C2E9E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25632F0F19097166CC4442E6 /* libPods.a */; };
+		1C6A39E61C857464004FBB0E /* NavsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A39E51C857464004FBB0E /* NavsViewController.m */; };
+		1C6A39EA1C85AF9E004FBB0E /* eventsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A39E91C85AF9E004FBB0E /* eventsDetailViewController.m */; };
+		1C6A39ED1C86B9D9004FBB0E /* EventsDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A39EC1C86B9D9004FBB0E /* EventsDetailViewCell.m */; };
 		1CA3528F1C7344AC0080A371 /* EventsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3528E1C7344AC0080A371 /* EventsCollectionViewController.m */; };
 		1CA352941C757C5F0080A371 /* issueTemplate1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA352931C757C5F0080A371 /* issueTemplate1Cell.m */; };
 		1CA352971C757C720080A371 /* issueTemplate2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA352961C757C720080A371 /* issueTemplate2Cell.m */; };
@@ -40,6 +43,9 @@
 		1CB159421C72C0270099C2AB /* EventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159401C72C0270099C2AB /* EventsCollectionViewCell.m */; };
 		1CB159431C72C0270099C2AB /* EventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CB159411C72C0270099C2AB /* EventsCollectionViewCell.xib */; };
 		1CB159461C7324490099C2AB /* RecieveRedBagController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB159451C7324490099C2AB /* RecieveRedBagController.m */; };
+		1CCC30151C8E6FF8000B1DCE /* EventDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC30141C8E6FF8000B1DCE /* EventDetailHeadView.m */; };
+		1CCC30181C8E95A9000B1DCE /* UIButton+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC30171C8E95A9000B1DCE /* UIButton+Circle.m */; };
+		1CCC301C1C8F009F000B1DCE /* dishes_order_by_hot.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CCC301B1C8F009F000B1DCE /* dishes_order_by_hot.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +83,12 @@
 		1295D7541C7185D300B39FC6 /* MComunitySocialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MComunitySocialModel.m; sourceTree = "<group>"; };
 		1295D75B1C71CBA400B39FC6 /* LLCommonMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCommonMethods.h; sourceTree = "<group>"; };
 		1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCommonMethods.m; sourceTree = "<group>"; };
+		1C6A39E41C857464004FBB0E /* NavsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavsViewController.h; sourceTree = "<group>"; };
+		1C6A39E51C857464004FBB0E /* NavsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavsViewController.m; sourceTree = "<group>"; };
+		1C6A39E81C85AF9E004FBB0E /* eventsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsDetailViewController.h; sourceTree = "<group>"; };
+		1C6A39E91C85AF9E004FBB0E /* eventsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsDetailViewController.m; sourceTree = "<group>"; };
+		1C6A39EB1C86B9D9004FBB0E /* EventsDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsDetailViewCell.h; sourceTree = "<group>"; };
+		1C6A39EC1C86B9D9004FBB0E /* EventsDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsDetailViewCell.m; sourceTree = "<group>"; };
 		1CA3528D1C7344AC0080A371 /* EventsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCollectionViewController.h; sourceTree = "<group>"; };
 		1CA3528E1C7344AC0080A371 /* EventsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCollectionViewController.m; sourceTree = "<group>"; };
 		1CA352921C757C5F0080A371 /* issueTemplate1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = issueTemplate1Cell.h; sourceTree = "<group>"; };
@@ -121,6 +133,11 @@
 		1CB159411C72C0270099C2AB /* EventsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsCollectionViewCell.xib; sourceTree = "<group>"; };
 		1CB159441C7324490099C2AB /* RecieveRedBagController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecieveRedBagController.h; sourceTree = "<group>"; };
 		1CB159451C7324490099C2AB /* RecieveRedBagController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecieveRedBagController.m; sourceTree = "<group>"; };
+		1CCC30131C8E6FF8000B1DCE /* EventDetailHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailHeadView.h; path = Cooking/MCooking/View/EventDetailHeadView.h; sourceTree = SOURCE_ROOT; };
+		1CCC30141C8E6FF8000B1DCE /* EventDetailHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailHeadView.m; path = Cooking/MCooking/View/EventDetailHeadView.m; sourceTree = SOURCE_ROOT; };
+		1CCC30161C8E95A9000B1DCE /* UIButton+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Circle.h"; sourceTree = "<group>"; };
+		1CCC30171C8E95A9000B1DCE /* UIButton+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Circle.m"; sourceTree = "<group>"; };
+		1CCC301B1C8F009F000B1DCE /* dishes_order_by_hot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dishes_order_by_hot.json; sourceTree = "<group>"; };
 		25632F0F19097166CC4442E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8A24E5DA8B00C1BAFD03F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CA70C862288D20945D300F8F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +172,7 @@
 		121C98701C8042C9007DAB81 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1CCC301B1C8F009F000B1DCE /* dishes_order_by_hot.json */,
 				121C98711C80431C007DAB81 /* file_issueurl.json */,
 			);
 			path = Resource;
@@ -211,6 +229,30 @@
 				1295D7501C7185AB00B39FC6 /* MComunitySocialCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1C6A39E31C857430004FBB0E /* navs */ = {
+			isa = PBXGroup;
+			children = (
+				1C6A39E41C857464004FBB0E /* NavsViewController.h */,
+				1C6A39E51C857464004FBB0E /* NavsViewController.m */,
+			);
+			name = navs;
+			sourceTree = "<group>";
+		};
+		1C6A39E71C85AF37004FBB0E /* events */ = {
+			isa = PBXGroup;
+			children = (
+				1C6A39E81C85AF9E004FBB0E /* eventsDetailViewController.h */,
+				1C6A39E91C85AF9E004FBB0E /* eventsDetailViewController.m */,
+				1CA3528D1C7344AC0080A371 /* EventsCollectionViewController.h */,
+				1CA3528E1C7344AC0080A371 /* EventsCollectionViewController.m */,
+				1C6A39EB1C86B9D9004FBB0E /* EventsDetailViewCell.h */,
+				1C6A39EC1C86B9D9004FBB0E /* EventsDetailViewCell.m */,
+				1CCC30131C8E6FF8000B1DCE /* EventDetailHeadView.h */,
+				1CCC30141C8E6FF8000B1DCE /* EventDetailHeadView.m */,
+			);
+			name = events;
 			sourceTree = "<group>";
 		};
 		1CA352901C757BB60080A371 /* issuesCell */ = {
@@ -422,12 +464,12 @@
 		1CB1590B1C5F61C00099C2AB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1C6A39E71C85AF37004FBB0E /* events */,
+				1C6A39E31C857430004FBB0E /* navs */,
 				1CB159121C5F6EC20099C2AB /* McookingController.h */,
 				1CB159131C5F6EC20099C2AB /* McookingController.m */,
 				1CB159441C7324490099C2AB /* RecieveRedBagController.h */,
 				1CB159451C7324490099C2AB /* RecieveRedBagController.m */,
-				1CA3528D1C7344AC0080A371 /* EventsCollectionViewController.h */,
-				1CA3528E1C7344AC0080A371 /* EventsCollectionViewController.m */,
 				1CA352A51C7726530080A371 /* pop */,
 			);
 			path = Controller;
@@ -440,6 +482,8 @@
 				1295D7071C633AF900B39FC6 /* PrefixHeader.pch */,
 				1295D75B1C71CBA400B39FC6 /* LLCommonMethods.h */,
 				1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */,
+				1CCC30161C8E95A9000B1DCE /* UIButton+Circle.h */,
+				1CCC30171C8E95A9000B1DCE /* UIButton+Circle.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -540,7 +584,7 @@
 				TargetAttributes = {
 					1CB158AA1C5F306C0099C2AB = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = LCU6SPZP3B;
+						DevelopmentTeam = 9J4Y7YNRRQ;
 					};
 					1CB158C31C5F306C0099C2AB = {
 						CreatedOnToolsVersion = 7.2;
@@ -586,6 +630,7 @@
 				1295D7521C7185AB00B39FC6 /* MComunitySocialCell.xib in Resources */,
 				121C98721C80431D007DAB81 /* file_issueurl.json in Resources */,
 				1CB158B91C5F306C0099C2AB /* Main.storyboard in Resources */,
+				1CCC301C1C8F009F000B1DCE /* dishes_order_by_hot.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,20 +711,25 @@
 				1295D70F1C633BCA00B39FC6 /* BaseViewController.m in Sources */,
 				1CA3529A1C757C860080A371 /* issueTemplate4Cell.m in Sources */,
 				1CA352971C757C720080A371 /* issueTemplate2Cell.m in Sources */,
+				1C6A39ED1C86B9D9004FBB0E /* EventsDetailViewCell.m in Sources */,
 				1CA352941C757C5F0080A371 /* issueTemplate1Cell.m in Sources */,
 				1295D70B1C633B9800B39FC6 /* AppDelegate.m in Sources */,
+				1C6A39EA1C85AF9E004FBB0E /* eventsDetailViewController.m in Sources */,
 				1CB159461C7324490099C2AB /* RecieveRedBagController.m in Sources */,
 				1CA3529D1C757C980080A371 /* issueTemplate5Cell.m in Sources */,
 				1CB159171C5F6EDE0099C2AB /* MarketViewController.m in Sources */,
+				1CCC30181C8E95A9000B1DCE /* UIButton+Circle.m in Sources */,
 				1295D7031C6327B200B39FC6 /* CKHTTPManager.m in Sources */,
 				1CB159141C5F6EC20099C2AB /* McookingController.m in Sources */,
 				1CA352A41C7726480080A371 /* PopViewController.m in Sources */,
 				1295D7061C6327FA00B39FC6 /* CKHTTPRequest.m in Sources */,
 				1CB159321C6DE7D60099C2AB /* MCookHeadView.m in Sources */,
+				1CCC30151C8E6FF8000B1DCE /* EventDetailHeadView.m in Sources */,
 				1CB158B01C5F306C0099C2AB /* main.m in Sources */,
 				1295D7511C7185AB00B39FC6 /* MComunitySocialCell.m in Sources */,
 				1CB1591A1C5F6F110099C2AB /* MComunityController.m in Sources */,
 				1CA3528F1C7344AC0080A371 /* EventsCollectionViewController.m in Sources */,
+				1C6A39E61C857464004FBB0E /* NavsViewController.m in Sources */,
 				1295D7551C7185D300B39FC6 /* MComunitySocialModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

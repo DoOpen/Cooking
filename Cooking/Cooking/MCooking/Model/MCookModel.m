@@ -238,3 +238,65 @@
 //
 //
 
+@implementation mcookEventDetail
+
+
++(NSDictionary *) JSONKeyPathsByPropertyKey {
+
+    return @{
+             
+             @"name" : @"event.name",
+             @"n_dishes" : @"event.n_dishes",
+             @"desc" : @"event.desc",
+             @"ID" : @"event.id"
+             
+             };
+}
+
+@end
+
+@implementation McookEventDetailCellModel
+
++(NSDictionary *) JSONKeyPathsByPropertyKey {
+
+    return @{
+
+            @"total" : @"total",
+            @"count" : @"count",
+            @"dishes":@"dishes"
+
+    };
+
+}
++ (NSValueTransformer *)dishesJSONTransformer {
+    
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[McookEventDetailDishesM class]];
+}
+
+
+@end
+
+@implementation McookEventDetailDishesM
+
++(NSDictionary *) JSONKeyPathsByPropertyKey {
+    
+    return @{
+             
+             @"thumbnail" : @"thumbnail",
+             @"ndiggs" : @"ndiggs",
+             @"desc" : @"desc",
+             @"name": @"name",
+             @"authorPhoto60":@"author.photo60",
+             @"authorHometown_location":@"author.hometown_location",
+             @"authorName":@"author.name",
+             @"events" : @"events"
+             
+             };
+    
+}
+
+
+
+@end
+
+

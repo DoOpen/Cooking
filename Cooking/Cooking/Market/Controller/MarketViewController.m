@@ -8,7 +8,7 @@
 
 #import "MarketViewController.h"
 
-@interface MarketViewController ()<UISearchBarDelegate>
+@interface MarketViewController ()<UISearchBarDelegate,UIWebViewDelegate>
 
 @property (nonatomic, strong)UISearchBar * mySearchBar;
 @property (nonatomic, strong)UIWebView *webView;
@@ -23,9 +23,6 @@
     [super viewWillAppear:animated];
     
     [self loadData];
-
-
-
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,7 +71,7 @@
     if (!_webView) {
         
         [_webView.scrollView setBackgroundColor:[UIColor redColor]];
-        
+        _webView.delegate = self;
         _webView.backgroundColor = KMainBackgroudColor;
         _webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
         
@@ -85,6 +82,19 @@
 
 
 }
+
+#pragma mark -webview 的代理方法
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+
+
+    NSLog(@"%@",request);
+    return YES;
+
+
+
+}
+
 //-(void)RequstData {
 //    
 //    [CKHTTPRequest getMarketReuest:self params:nil];
@@ -96,30 +106,13 @@
 //    NSLog(@"%@",responseDict);
 //    
 //    
-////    if ([responseDict[@"status"] isEqualToString:@"ok"]) {
-////        //判断是否是头部请求
-////        if ([cmd isEqualToString:HEADVIEWDATAURL]) {
-////            self.headDatas = [MTLJSONAdapter modelOfClass:[MCookModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
-////            [self initHeadView];
-////            [self.navCollectionView reloadData];
-////            [self.eventViewController.collectionView reloadData];
-////        }
-////        //判断是否是红包请求
-////        if ([cmd isEqualToString:REDBAGURL]) {
-////            self.redBagDatas = [MTLJSONAdapter modelOfClass:[McookRedBagModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
-////            
-////        }
-////    }
-////    
-////    if ([cmd isEqualToString:ISSUEURL]) {
-////        
-////        self.issuesDatas = [MTLJSONAdapter modelOfClass:[McookCellModel class] fromJSONDictionary:responseDict[@"content"] error:nil];
-////        [self.tableView reloadData];
-////        
-////    }
+//    if ([responseDict[@"status"] isEqualToString:@"ok"]) {
+//   
+//        
+//    }
 //    
 //}
-// 请求数据失败
+// //请求数据失败
 //-(void)requestFailWithError:(NSError *)error cmd:(NSString *)cmd postdict:(NSDictionary *)postdic{
 //    
 //    

@@ -11,6 +11,7 @@
 @class McookheadEvents;
 @class McookissueModel;
 @class McookissueItemsModel;
+@class McookEventDetailDishesM;
 
 /**主要模型*/
 @interface MCookModel : MTLModel<MTLJSONSerializing>
@@ -130,4 +131,39 @@
 //
 //@end
 
+
+/**eventsDetail*/
+@interface mcookEventDetail :MTLModel<MTLJSONSerializing>
+
+@property (nonatomic,copy)   NSString *name;
+
+@property (nonatomic,assign) NSInteger n_dishes;
+
+@property (nonatomic,copy)   NSString *desc;
+
+@property (nonatomic,copy)   NSString *ID;
+
+@end
+
+/**eventsDetailCellModel*/
+@interface McookEventDetailCellModel : MTLModel<MTLJSONSerializing>
+@property (nonatomic,assign)NSInteger total;
+@property (nonatomic,assign)NSInteger count;
+@property (nonatomic,strong)NSArray<McookEventDetailDishesM *> *dishes;
+@end
+
+@interface McookEventDetailDishesM : MTLModel<MTLJSONSerializing>
+
+@property (nonatomic,copy)  NSString *thumbnail;
+@property (nonatomic,assign)NSInteger ndiggs;
+@property (nonatomic,copy)  NSString *desc;
+@property (nonatomic,copy)  NSString *authorPhoto60;
+@property (nonatomic,copy)  NSString *authorHometown_location;
+@property (nonatomic,copy)  NSString *authorName;
+@property (nonatomic,copy)  NSString *name;
+@property (nonatomic,copy)  NSString *authorPhoto;
+@property (nonatomic,strong) NSArray *events;
+//@property (nonatomic,copy)  NSString *eventName;
+
+@end
 

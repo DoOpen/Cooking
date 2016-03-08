@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MCookModel;
 
 @interface PopViewController : UITableViewController
+
+
 
 @end

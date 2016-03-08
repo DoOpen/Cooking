@@ -37,6 +37,8 @@
 /*----------------------------基础请求-------------------------------*/
 + (void)GET:(__weak id<CKHTTPRequestDelegate>)delegate URL:(NSString *)url parameter:(NSDictionary *)parameter;
 + (void)POST:(__weak id<CKHTTPRequestDelegate>)delegate URL:(NSString *)url parameter:(NSDictionary *)parameter;
+//本地请求
++ (void)Local:(__weak id<CKHTTPRequestDelegate>)delegate fileURL:(NSString *)fileURL;
 
 /*----------------------------请求列表-------------------------------*/
 
