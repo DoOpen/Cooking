@@ -161,9 +161,19 @@
 @property (nonatomic,copy)  NSString *authorHometown_location;
 @property (nonatomic,copy)  NSString *authorName;
 @property (nonatomic,copy)  NSString *name;
+@property (nonatomic,strong)NSArray *events;
+
 @property (nonatomic,copy)  NSString *authorPhoto;
-@property (nonatomic,strong) NSArray *events;
-//@property (nonatomic,copy)  NSString *eventName;
+@property (nonatomic,copy)  NSString *ID;
+@property (nonatomic,copy)  NSString *friendly_create_time;
+@property (nonatomic,copy)  NSString *photo;
+@property (nonatomic,strong)NSArray *extra_pics;
+//评论
+@property (nonatomic,assign)NSInteger ncomments;
+//最近评论
+@property (nonatomic,strong) NSArray *latest_comments;
 
 @end
+
+
 

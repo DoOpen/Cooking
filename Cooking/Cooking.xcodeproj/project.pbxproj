@@ -46,6 +46,8 @@
 		1CCC30151C8E6FF8000B1DCE /* EventDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC30141C8E6FF8000B1DCE /* EventDetailHeadView.m */; };
 		1CCC30181C8E95A9000B1DCE /* UIButton+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC30171C8E95A9000B1DCE /* UIButton+Circle.m */; };
 		1CCC301C1C8F009F000B1DCE /* dishes_order_by_hot.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CCC301B1C8F009F000B1DCE /* dishes_order_by_hot.json */; };
+		1CCC30221C8F2B16000B1DCE /* eventDesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC30211C8F2B16000B1DCE /* eventDesController.m */; };
+		1CCC30251C8FE8EF000B1DCE /* UIImage+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC30241C8FE8EF000B1DCE /* UIImage+Circle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,10 @@
 		1CCC30161C8E95A9000B1DCE /* UIButton+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Circle.h"; sourceTree = "<group>"; };
 		1CCC30171C8E95A9000B1DCE /* UIButton+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Circle.m"; sourceTree = "<group>"; };
 		1CCC301B1C8F009F000B1DCE /* dishes_order_by_hot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dishes_order_by_hot.json; sourceTree = "<group>"; };
+		1CCC30201C8F2B16000B1DCE /* eventDesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventDesController.h; sourceTree = "<group>"; };
+		1CCC30211C8F2B16000B1DCE /* eventDesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventDesController.m; sourceTree = "<group>"; };
+		1CCC30231C8FE8EF000B1DCE /* UIImage+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Circle.h"; sourceTree = "<group>"; };
+		1CCC30241C8FE8EF000B1DCE /* UIImage+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Circle.m"; sourceTree = "<group>"; };
 		25632F0F19097166CC4442E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8A24E5DA8B00C1BAFD03F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CA70C862288D20945D300F8F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +257,8 @@
 				1C6A39EC1C86B9D9004FBB0E /* EventsDetailViewCell.m */,
 				1CCC30131C8E6FF8000B1DCE /* EventDetailHeadView.h */,
 				1CCC30141C8E6FF8000B1DCE /* EventDetailHeadView.m */,
+				1CCC30201C8F2B16000B1DCE /* eventDesController.h */,
+				1CCC30211C8F2B16000B1DCE /* eventDesController.m */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -484,6 +492,8 @@
 				1295D75C1C71CBA400B39FC6 /* LLCommonMethods.m */,
 				1CCC30161C8E95A9000B1DCE /* UIButton+Circle.h */,
 				1CCC30171C8E95A9000B1DCE /* UIButton+Circle.m */,
+				1CCC30231C8FE8EF000B1DCE /* UIImage+Circle.h */,
+				1CCC30241C8FE8EF000B1DCE /* UIImage+Circle.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -704,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CB1593E1C71C8E60099C2AB /* NavCollectionViewCell.m in Sources */,
+				1CCC30251C8FE8EF000B1DCE /* UIImage+Circle.m in Sources */,
 				1CB159421C72C0270099C2AB /* EventsCollectionViewCell.m in Sources */,
 				1CB1591D1C5F6F370099C2AB /* MineViewController.m in Sources */,
 				1CB1592B1C6CBF180099C2AB /* MCookModel.m in Sources */,
@@ -712,6 +723,7 @@
 				1CA3529A1C757C860080A371 /* issueTemplate4Cell.m in Sources */,
 				1CA352971C757C720080A371 /* issueTemplate2Cell.m in Sources */,
 				1C6A39ED1C86B9D9004FBB0E /* EventsDetailViewCell.m in Sources */,
+				1CCC30221C8F2B16000B1DCE /* eventDesController.m in Sources */,
 				1CA352941C757C5F0080A371 /* issueTemplate1Cell.m in Sources */,
 				1295D70B1C633B9800B39FC6 /* AppDelegate.m in Sources */,
 				1C6A39EA1C85AF9E004FBB0E /* eventsDetailViewController.m in Sources */,

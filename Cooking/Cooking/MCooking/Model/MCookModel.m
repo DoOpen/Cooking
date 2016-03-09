@@ -289,7 +289,14 @@
              @"authorPhoto60":@"author.photo60",
              @"authorHometown_location":@"author.hometown_location",
              @"authorName":@"author.name",
-             @"events" : @"events"
+             @"events" : @"events",
+             @"authorPhoto":@"author.photo",
+             @"ID":@"author.id",
+             @"friendly_create_time":@"friendly_create_time",
+             @"photo":@"photo",
+             @"extra_pics" : @"extra_pics",
+             @"ncomments" : @"ncomments",
+             @"latest_comments":@"latest_comments"
              
              };
     

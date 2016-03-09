@@ -10,7 +10,7 @@
 #import "MCookModel.h"
 #import "EventDetailHeadView.h"
 #import "EventsDetailViewCell.h"
-//#import "CKHTTPRequest.h"
+#import "eventDesController.h"
 
 #define BREAKFAST @"http://api.xiachufang.com/v2/events/show.json?version=5.2.2&id=100096297&api_sign=c75b74cbe23fb46f84f13ad6f7910257&api_key=0f9f79be1dac5f003e7de6f876b17c00&origin=iphone&sk=VJLD90zORKSBXdQbpWTJ1w"
 #define BREAKFASTORDER @"http://api.xiachufang.com/v2/events/100096297/dishes_order_by_hot.json?offset=0&detail=true&origin=iphone&api_sign=ea89ea7a50e1762fc79d1a4430c58330&sk=VJLD90zORKSBXdQbpWTJ1w&limit=18&version=5.2.2&timestamp=1457424881&api_key=0f9f79be1dac5f003e7de6f876b17c00"
@@ -184,33 +184,14 @@ static NSString * const reuseIdentifier = @"eventDetailCell";
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    McookEventDetailDishesM *disM = self.eventDetailM.dishes[indexPath.row];
+    eventDesController *eventDesc = [[eventDesController alloc] init];
+    eventDesc.DishesM = disM;
+    eventDesc.view.backgroundColor = KMainBackgroudColor;
+    [self.navigationController pushViewController:eventDesc animated:YES];
+    
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
 }
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
-
 @end
